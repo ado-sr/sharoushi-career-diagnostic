@@ -451,16 +451,10 @@
             </div>
 
             <div style="margin: 24px 0;">
-                <div style="position: relative; width: 100%; max-width: 400px; margin: 0 auto;">
-                    <input type="text" id="twitterUsernameInput" placeholder="Xアカウント名を入力（例: @ado_sr）" style="width: 100%; padding: 12px 120px 12px 12px; border: 2px solid #e0e0e0; border-radius: 100px; font-size: 14px; text-align: center; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#0066FF'" onblur="this.style.borderColor='#e0e0e0'">
-                    <button onclick="fetchTwitterUser()" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); background: linear-gradient(135deg, #0066FF, #00C896); color: white; border: none; padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">取得</button>
+                <div style="width: 100%; max-width: 400px; margin: 0 auto;">
+                    <input type="text" id="twitterUsernameInput" placeholder="ニックネームを入力（例: 田中太郎）" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 100px; font-size: 14px; text-align: center; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#0066FF'" onblur="this.style.borderColor='#e0e0e0'">
                 </div>
-                <div id="twitterUserPreview" style="margin-top: 12px; display: none; text-align: center;">
-                    <img id="twitterUserAvatar" src="" alt="Profile" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #0066FF; vertical-align: middle; margin-right: 8px;">
-                    <span id="twitterUserName" style="font-size: 14px; font-weight: 600; color: #333;"></span>
-                </div>
-                <div id="twitterUserError" style="font-size: 12px; color: #FF6B6B; margin-top: 8px; display: none;"></div>
-                <div style="font-size: 12px; color: #888; margin-top: 8px;">診断結果にアイコンとニックネームが表示されます（任意）</div>
+                <div style="font-size: 12px; color: #888; margin-top: 8px;">診断結果に表示されます（任意・空欄でもOK）</div>
             </div>
 
             <button class="btn" onclick="startQuiz()">診断をはじめる（無料・約3分）</button>
@@ -1090,72 +1084,11 @@
         const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyEvWkpHO08uvlhUFOlYMRGnHUY9ytJteuTn2ACO8MnwuSdSMSrKHLnM2uH3imyYfFiJA/exec';
         // 例: 'https://script.google.com/macros/s/AKfycby.../exec'
 
-        // Xアカウント情報を取得する関数
-        async function fetchTwitterUser() {
-            const input = document.getElementById('twitterUsernameInput');
-            const username = input.value.trim();
-
-            const errorEl = document.getElementById('twitterUserError');
-            const previewEl = document.getElementById('twitterUserPreview');
-            const avatarEl = document.getElementById('twitterUserAvatar');
-            const nameEl = document.getElementById('twitterUserName');
-
-            // エラーメッセージをクリア
-            errorEl.style.display = 'none';
-            errorEl.textContent = '';
-            previewEl.style.display = 'none';
-
-            if (!username) {
-                errorEl.textContent = 'アカウント名を入力してください';
-                errorEl.style.display = 'block';
-                return;
-            }
-
-            try {
-                // ローディング表示
-                input.style.borderColor = '#0066FF';
-                input.disabled = true;
-
-                // バックエンドAPIを呼び出し
-                const response = await fetch(`${API_BASE_URL}/api/twitter-user/${encodeURIComponent(username)}`);
-                const data = await response.json();
-
-                if (data.success && data.user) {
-                    // 成功：ユーザー情報を保存
-                    userNickname = data.user.name;
-                    userProfileImage = data.user.profileImageUrl;
-                    twitterUsername = data.user.username;
-
-                    // プレビューを表示
-                    avatarEl.src = userProfileImage;
-                    nameEl.textContent = `${userNickname} (@${twitterUsername})`;
-                    previewEl.style.display = 'block';
-
-                    // 入力欄を緑色に
-                    input.style.borderColor = '#00C896';
-                } else {
-                    // エラー
-                    errorEl.textContent = data.message || 'アカウント情報を取得できませんでした';
-                    errorEl.style.display = 'block';
-                    input.style.borderColor = '#FF6B6B';
-                }
-            } catch (error) {
-                console.error('Error fetching Twitter user:', error);
-                errorEl.textContent = 'サーバーに接続できませんでした。バックエンドサーバーが起動しているか確認してください。';
-                errorEl.style.display = 'block';
-                input.style.borderColor = '#FF6B6B';
-            } finally {
-                input.disabled = false;
-            }
-        }
-
         function startQuiz() {
-            // X情報が取得されていない場合は、入力値をそのままニックネームとして使用
-            if (!userNickname) {
-                const input = document.getElementById('twitterUsernameInput').value.trim();
-                if (input) {
-                    userNickname = input.replace('@', ''); // @を取り除いて使用
-                }
+            // 入力値をニックネームとして使用
+            const input = document.getElementById('twitterUsernameInput').value.trim();
+            if (input) {
+                userNickname = input;
             }
 
             // カウンターをリセット
