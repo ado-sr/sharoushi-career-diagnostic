@@ -1848,8 +1848,8 @@
             });
         }
 
-        // Xシェア機能（スマホ対応）
-        async function shareTwitter() {
+        // Xシェア機能（テキストのみ・シンプル版）
+        function shareTwitter() {
             const result = window.currentResult;
             const riasecCode = window.currentRiasecCode || '';
             const rarityEmoji = result.rarityLevel === '激レア' ? '⭐' : result.rarityLevel === 'レア' ? '✨' : '🔹';
@@ -1857,7 +1857,7 @@
             // 診断ツールのURL
             const baseUrl = window.location.origin + window.location.pathname;
 
-            // 短縮したテキスト（280文字以内）
+            // シェアテキスト（280文字以内）
             const text = `【${rarityEmoji} ${result.rarityLevel}】私の社労士キャリアは「${result.type}」！
 ${result.badge}
 
@@ -1867,50 +1867,9 @@ RIASECコード: ${riasecCode}
 あなたも診断してみよう👇
 #社労士キャリア診断 #社労士`;
 
-            // 画像を生成
-            const canvas = await generateResultImage();
-
-            // スマホの場合: Web Share APIで画像付き共有
-            if (navigator.share) {
-                try {
-                    const blob = await new Promise(resolve => canvas.toBlob(resolve));
-                    const file = new File([blob], '社労士キャリア診断結果.png', { type: 'image/png' });
-
-                    // 画像を含めて共有可能かチェック
-                    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-                        await navigator.share({
-                            files: [file],
-                            title: '社労士キャリア診断結果',
-                            text: text + '\n' + baseUrl
-                        });
-                        return;
-                    } else {
-                        // 画像なしでテキストのみ共有
-                        await navigator.share({
-                            title: '社労士キャリア診断結果',
-                            text: text,
-                            url: baseUrl
-                        });
-                        return;
-                    }
-                } catch (err) {
-                    if (err.name !== 'AbortError') {
-                        console.log('共有エラー:', err);
-                    }
-                    // エラー時は下記のフォールバックへ
-                }
-            }
-
-            // PC/フォールバック: 画像をクリップボードにコピー + Twitter Intent URLを開く
-            const copied = await copyImageToClipboard(canvas);
-
-            if (copied) {
-                alert('📋 結果画像をコピーしました！\n\nX投稿画面で Ctrl+V（Mac: Cmd+V）で貼り付けてください。');
-            }
-
-            // Xアプリを開く（スマホ）またはWebを開く
+            // Xアプリを開く（スマホならアプリ、PCならWeb）
             const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(baseUrl)}`;
-            window.open(twitterUrl, '_blank');
+            window.location.href = twitterUrl; // window.openではなくlocation.hrefでアプリ連携
         }
 
         function shareLine() {
