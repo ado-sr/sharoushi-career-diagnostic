@@ -1820,8 +1820,25 @@
             const result = window.currentResult;
             const canvas = await generateResultImage();
 
-            // 画像をダウンロード
-            canvas.toBlob(blob => {
+            // 画像をBlobに変換
+            canvas.toBlob(async blob => {
+                const file = new File([blob], `社労士キャリア診断_${result.type}.png`, { type: 'image/png' });
+
+                // スマホの場合: Web Share APIを使用
+                if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                    try {
+                        await navigator.share({
+                            files: [file],
+                            title: '社労士キャリア診断結果',
+                            text: `私のキャリアタイプは「${result.type}」でした！`
+                        });
+                        return;
+                    } catch (err) {
+                        console.log('共有がキャンセルされました:', err);
+                    }
+                }
+
+                // PCの場合: 通常のダウンロード
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
@@ -1831,15 +1848,11 @@
             });
         }
 
-        // Xシェア時に画像を自動コピー
+        // Xシェア機能（スマホ対応）
         async function shareTwitter() {
             const result = window.currentResult;
             const riasecCode = window.currentRiasecCode || '';
             const rarityEmoji = result.rarityLevel === '激レア' ? '⭐' : result.rarityLevel === 'レア' ? '✨' : '🔹';
-
-            // 画像を生成してクリップボードにコピー
-            const canvas = await generateResultImage();
-            const copied = await copyImageToClipboard(canvas);
 
             // 診断ツールのURL
             const baseUrl = window.location.origin + window.location.pathname;
@@ -1854,13 +1867,50 @@ RIASECコード: ${riasecCode}
 あなたも診断してみよう👇
 #社労士キャリア診断 #社労士`;
 
-            // 通知を表示
+            // 画像を生成
+            const canvas = await generateResultImage();
+
+            // スマホの場合: Web Share APIで画像付き共有
+            if (navigator.share) {
+                try {
+                    const blob = await new Promise(resolve => canvas.toBlob(resolve));
+                    const file = new File([blob], '社労士キャリア診断結果.png', { type: 'image/png' });
+
+                    // 画像を含めて共有可能かチェック
+                    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                        await navigator.share({
+                            files: [file],
+                            title: '社労士キャリア診断結果',
+                            text: text + '\n' + baseUrl
+                        });
+                        return;
+                    } else {
+                        // 画像なしでテキストのみ共有
+                        await navigator.share({
+                            title: '社労士キャリア診断結果',
+                            text: text,
+                            url: baseUrl
+                        });
+                        return;
+                    }
+                } catch (err) {
+                    if (err.name !== 'AbortError') {
+                        console.log('共有エラー:', err);
+                    }
+                    // エラー時は下記のフォールバックへ
+                }
+            }
+
+            // PC/フォールバック: 画像をクリップボードにコピー + Twitter Intent URLを開く
+            const copied = await copyImageToClipboard(canvas);
+
             if (copied) {
                 alert('📋 結果画像をコピーしました！\n\nX投稿画面で Ctrl+V（Mac: Cmd+V）で貼り付けてください。');
             }
 
-            // Twitter投稿画面を開く
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(baseUrl)}`, '_blank');
+            // Xアプリを開く（スマホ）またはWebを開く
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(baseUrl)}`;
+            window.open(twitterUrl, '_blank');
         }
 
         function shareLine() {
