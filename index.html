@@ -1209,9 +1209,8 @@
 
             let result = resultTypes[resultType];
 
-            // 受験生・合格者（未就職）の場合は、シャロスタ一択に上書き
-            if (experienceLevel === 'まだ資格を持っていない（受験生）' ||
-                experienceLevel === '資格取得したばかり（実務未経験）') {
+            // 受験生の場合のみ、シャロスタ一択に上書き
+            if (experienceLevel === 'まだ資格を持っていない（受験生）') {
                 result = {
                     ...result,
                     ctaTitle: "シャロスタで仲間と共に合格を目指そう",
