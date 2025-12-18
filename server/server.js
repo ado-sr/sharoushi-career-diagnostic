@@ -80,8 +80,14 @@ app.use((err, req, res, next) => {
 });
 
 // サーバー起動
-app.listen(PORT, () => {
-    console.log(`🚀 Server is running on port ${PORT}`);
-    console.log(`📍 Health check: http://localhost:${PORT}/api/health`);
-    console.log(`🐦 X API endpoint: http://localhost:${PORT}/api/twitter-user/:username`);
-});
+// Vercelなどのサーバーレス環境では、appをエクスポートするだけで良い
+// ローカル実行時のみ listen する
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server is running on port ${PORT}`);
+        console.log(`📍 Health check: http://localhost:${PORT}/api/health`);
+        console.log(`🐦 X API endpoint: http://localhost:${PORT}/api/twitter-user/:username`);
+    });
+}
+
+module.exports = app;

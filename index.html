@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>社労士キャリア診断 | Schein×Holland理論に基づく科学的診断 | 社労士Lab</title>
-    <meta name="description" content="MIT教授が開発したキャリア・アンカー理論と世界標準のRIASEC理論に基づく、エビデンスベースの社労士キャリア診断。たった3分で、あなたに最適なキャリアパスが見つかります。">
+    <meta name="description"
+        content="MIT教授が開発したキャリア・アンカー理論と世界標準のRIASEC理論に基づく、エビデンスベースの社労士キャリア診断。たった3分で、あなたに最適なキャリアパスが見つかります。">
     <meta name="keywords" content="社労士,キャリア診断,キャリアアンカー,Schein,Holland,RIASEC,職業適性,社労士Lab">
     <meta property="og:title" content="社労士キャリア診断 | Schein×Holland理論に基づく科学的診断">
-    <meta property="og:description" content="MIT教授が開発したキャリア・アンカー理論×世界標準のRIASEC理論。科学的根拠に基づくエビデンスベースの診断で、あなたに最適な社労士キャリアパスを発見。">
+    <meta property="og:description"
+        content="MIT教授が開発したキャリア・アンカー理論×世界標準のRIASEC理論。科学的根拠に基づくエビデンスベースの診断で、あなたに最適な社労士キャリアパスを発見。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://srlab-career.netlify.app/">
     <meta property="og:image" content="https://srlab-career.netlify.app/ogp-image.png">
@@ -44,6 +47,90 @@
             line-height: 1.6;
         }
 
+        /* Combat Power Styles */
+        .combat-power-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: white;
+            padding: 32px 20px;
+            border-radius: 20px;
+            margin: 0 0 32px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+        }
+
+        .combat-power-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #FF6B6B, #FFD700, #00C896, #0066FF);
+        }
+
+        .combat-power-label {
+            font-size: 14px;
+            color: #aaa;
+            letter-spacing: 3px;
+            margin-bottom: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .combat-power-value {
+            font-size: 56px;
+            font-weight: 900;
+            color: #FFD700;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+            font-family: "Impact", "Arial Black", sans-serif;
+            line-height: 1.1;
+            margin: 8px 0;
+        }
+
+        .rank-badge-bg {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            font-size: 120px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            transform: translateY(-50%) rotate(10deg);
+            pointer-events: none;
+            font-family: "Impact", sans-serif;
+        }
+
+        .rank-display {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .rank-s {
+            color: #FFD700;
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .rank-a {
+            color: #FF6B6B;
+            border-color: #FF6B6B;
+            background: rgba(255, 107, 107, 0.1);
+        }
+
+        .rank-b {
+            color: #00C896;
+            border-color: #00C896;
+            background: rgba(0, 200, 150, 0.1);
+        }
+
         .container {
             max-width: 600px;
             width: 100%;
@@ -59,6 +146,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -66,10 +154,13 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
             }
+
             50% {
                 transform: scale(1.05);
                 box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
@@ -77,8 +168,15 @@
         }
 
         @keyframes sparkle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
         }
 
         .logo {
@@ -423,6 +521,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="logo">
@@ -457,7 +556,9 @@
 
             <div style="margin: 24px 0;">
                 <div style="width: 100%; max-width: 400px; margin: 0 auto;">
-                    <input type="text" id="twitterUsernameInput" placeholder="ニックネームを入力（例: 田中太郎）" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 100px; font-size: 14px; text-align: center; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#0066FF'" onblur="this.style.borderColor='#e0e0e0'">
+                    <input type="text" id="twitterUsernameInput" placeholder="ニックネームを入力（例: 田中太郎）"
+                        style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 100px; font-size: 14px; text-align: center; outline: none; transition: border-color 0.3s;"
+                        onfocus="this.style.borderColor='#0066FF'" onblur="this.style.borderColor='#e0e0e0'">
                 </div>
                 <div style="font-size: 12px; color: #888; margin-top: 8px;">診断結果に表示されます（任意・空欄でもOK）</div>
             </div>
@@ -479,19 +580,31 @@
         <div class="result-screen" id="resultScreen">
             <!-- レア度表示（目立つ演出） -->
             <div style="text-align: center; margin-bottom: 24px;">
-                <div id="rarityBadge" style="display: inline-block; padding: 8px 24px; border-radius: 100px; font-size: 14px; font-weight: 800; color: white; background: linear-gradient(135deg, #FF6B6B, #FF8E53); box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); animation: pulse 2s infinite;">
+                <div id="rarityBadge"
+                    style="display: inline-block; padding: 8px 24px; border-radius: 100px; font-size: 14px; font-weight: 800; color: white; background: linear-gradient(135deg, #FF6B6B, #FF8E53); box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); animation: pulse 2s infinite;">
                     ⭐ 激レア ⭐
                 </div>
                 <div style="font-size: 13px; color: #666; margin-top: 8px;">
-                    このタイプは全体の <span id="rarityPercent" style="font-weight: 800; font-size: 18px; color: #FF6B6B;">10%</span> だけ！
+                    このタイプは全体の <span id="rarityPercent"
+                        style="font-weight: 800; font-size: 18px; color: #FF6B6B;">10%</span> だけ！
                 </div>
+            </div>
+
+            <!-- 戦闘力表示セクション -->
+            <div class="combat-power-section">
+                <div class="rank-badge-bg" id="rankBg">S</div>
+                <div class="combat-power-label">POTENTIAL POWER</div>
+                <div class="combat-power-value" id="combatPowerValue">0</div>
+                <div class="rank-display" id="rankDisplay">RANK A - 上級社労士クラス</div>
+                <div style="font-size: 10px; color: #666; margin-top: 8px;">※この数値はジョークです。実際の能力を保証するものではありません。</div>
             </div>
 
             <div class="result-icon" id="resultIcon"></div>
             <div class="result-type" id="resultType"></div>
 
             <!-- ニックネーム表示 -->
-            <div id="nicknameDisplay" style="text-align: center; font-size: 16px; color: #555; margin: 12px 0; font-weight: 600;"></div>
+            <div id="nicknameDisplay"
+                style="text-align: center; font-size: 16px; color: #555; margin: 12px 0; font-weight: 600;"></div>
 
             <!-- 称号バッジ -->
             <div style="text-align: center; margin: 16px 0;">
@@ -501,14 +614,16 @@
             </div>
 
             <!-- キャッチフレーズ -->
-            <div id="catchPhrase" style="text-align: center; font-size: 18px; font-weight: 700; color: #FF6B6B; margin-bottom: 16px; padding: 12px; background: linear-gradient(135deg, #fff5f5, #fff8e1); border-radius: 12px; border: 2px dashed #FF6B6B;">
+            <div id="catchPhrase"
+                style="text-align: center; font-size: 18px; font-weight: 700; color: #FF6B6B; margin-bottom: 16px; padding: 12px; background: linear-gradient(135deg, #fff5f5, #fff8e1); border-radius: 12px; border: 2px dashed #FF6B6B;">
                 次世代を創る起業家マインドの持ち主！
             </div>
 
             <div class="result-description" id="resultDescription"></div>
 
             <!-- バイラルメッセージ -->
-            <div id="viralMessage" style="text-align: center; font-size: 16px; font-weight: 600; color: var(--dark); margin: 20px 0; padding: 16px; background: linear-gradient(135deg, #f0f9ff, #fef3f0); border-radius: 12px; border-left: 4px solid var(--primary);">
+            <div id="viralMessage"
+                style="text-align: center; font-size: 16px; font-weight: 600; color: var(--dark); margin: 20px 0; padding: 16px; background: linear-gradient(135deg, #f0f9ff, #fef3f0); border-radius: 12px; border-left: 4px solid var(--primary);">
                 野心と行動力を兼ね備えた稀少人材！あなたは全体のわずか10%💫
             </div>
 
@@ -517,10 +632,12 @@
                 <ul id="resultTraits"></ul>
             </div>
 
-            <div class="result-details" style="background: linear-gradient(135deg, #f0f7ff, #fff5f0); border: 2px solid #e0f0ff;">
+            <div class="result-details"
+                style="background: linear-gradient(135deg, #f0f7ff, #fff5f0); border: 2px solid #e0f0ff;">
                 <h3>📊 あなたのRIASECコード（Holland理論）</h3>
                 <div style="text-align: center; margin: 16px 0;">
-                    <div style="font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 8px;" id="riasecCode">S-E-I</div>
+                    <div style="font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 8px;"
+                        id="riasecCode">S-E-I</div>
                     <div style="font-size: 14px; color: #666;" id="riasecDetails">S(12点) E(10点) I(8点)</div>
                 </div>
 
@@ -528,12 +645,16 @@
                 <div style="display: flex; justify-content: center; margin: 24px 0;">
                     <svg id="riasecHexagon" width="280" height="280" viewBox="0 0 280 280">
                         <!-- 背景グリッド -->
-                        <polygon points="140,40 210,85 210,175 140,220 70,175 70,85" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
-                        <polygon points="140,70 190,100 190,160 140,190 90,160 90,100" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
-                        <polygon points="140,100 170,115 170,145 140,160 110,145 110,115" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+                        <polygon points="140,40 210,85 210,175 140,220 70,175 70,85" fill="none" stroke="#e0e0e0"
+                            stroke-width="1.5" />
+                        <polygon points="140,70 190,100 190,160 140,190 90,160 90,100" fill="none" stroke="#e0e0e0"
+                            stroke-width="1.5" />
+                        <polygon points="140,100 170,115 170,145 140,160 110,145 110,115" fill="none" stroke="#e0e0e0"
+                            stroke-width="1.5" />
 
                         <!-- データ多角形 -->
-                        <polygon id="riasecDataPolygon" points="140,40 210,85 210,175 140,220 70,175 70,85" fill="rgba(0, 102, 255, 0.2)" stroke="#0066FF" stroke-width="2.5"/>
+                        <polygon id="riasecDataPolygon" points="140,40 210,85 210,175 140,220 70,175 70,85"
+                            fill="rgba(0, 102, 255, 0.2)" stroke="#0066FF" stroke-width="2.5" />
 
                         <!-- ラベル -->
                         <text x="140" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#333">R</text>
@@ -544,12 +665,13 @@
                         <text x="55" y="90" text-anchor="end" font-size="14" font-weight="700" fill="#333">C</text>
 
                         <!-- 中心点 -->
-                        <circle cx="140" cy="130" r="3" fill="#0066FF"/>
+                        <circle cx="140" cy="130" r="3" fill="#0066FF" />
                     </svg>
                 </div>
 
                 <!-- RIASEC各次元の詳細スコア -->
-                <div id="riasecBreakdown" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 16px 0; font-size: 13px;">
+                <div id="riasecBreakdown"
+                    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 16px 0; font-size: 13px;">
                     <!-- JSで動的に生成 -->
                 </div>
 
@@ -557,23 +679,29 @@
                     R:現実的 I:研究的 A:芸術的 S:社会的 E:企業的 C:慣習的
                 </div>
 
-                <div style="background: white; padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.6; color: #555;">
+                <div
+                    style="background: white; padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.6; color: #555;">
                     <strong>RIASEC 3-letter code:</strong> あなたの職業興味を上位3つの次元で表現したコードです。数値が高い次元ほど、その興味が強いことを示します。
                 </div>
             </div>
 
-            <div class="result-details" style="background: linear-gradient(135deg, #fff5f8, #f5fff8); border: 2px solid #ffe0f0;">
+            <div class="result-details"
+                style="background: linear-gradient(135deg, #fff5f8, #f5fff8); border: 2px solid #ffe0f0;">
                 <h3>🎯 診断信頼度</h3>
                 <div style="margin: 16px 0;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                         <span style="font-weight: 600; color: var(--dark);">信頼度レベル:</span>
-                        <span style="font-size: 24px; font-weight: 800; color: var(--primary);" id="confidenceLevel">85%</span>
+                        <span style="font-size: 24px; font-weight: 800; color: var(--primary);"
+                            id="confidenceLevel">85%</span>
                     </div>
-                    <div style="width: 100%; height: 12px; background: #e8e8e8; border-radius: 100px; overflow: hidden;">
-                        <div id="confidenceBar" style="height: 100%; width: 85%; background: #00C896; transition: all 0.5s ease;"></div>
+                    <div
+                        style="width: 100%; height: 12px; background: #e8e8e8; border-radius: 100px; overflow: hidden;">
+                        <div id="confidenceBar"
+                            style="height: 100%; width: 85%; background: #00C896; transition: all 0.5s ease;"></div>
                     </div>
                 </div>
-                <div style="background: white; padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.6; color: #555; margin-top: 12px;">
+                <div
+                    style="background: white; padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.6; color: #555; margin-top: 12px;">
                     <strong>信頼度について:</strong> Scheinの理論では、キャリア・アンカーは実務経験を通じて明確化されます。あなたの経験レベルと回答の一貫性から算出された信頼度です。
                 </div>
             </div>
@@ -588,7 +716,8 @@
                     <strong>職業興味タイプ（Holland）:</strong>
                     <div id="hollandCode" style="color: #666; margin-top: 4px;"></div>
                 </div>
-                <div style="margin-top: 16px; padding: 16px; background: #f8f9fa; border-radius: 8px; font-size: 14px; line-height: 1.7; color: #555;">
+                <div
+                    style="margin-top: 16px; padding: 16px; background: #f8f9fa; border-radius: 8px; font-size: 14px; line-height: 1.7; color: #555;">
                     <div id="theoreticalExplanation"></div>
                 </div>
             </div>
@@ -600,7 +729,8 @@
             </div>
 
             <!-- シェア促進セクション（目立つデザイン） -->
-            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 32px; border-radius: 20px; margin-bottom: 24px; text-align: center; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);">
+            <div
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 32px; border-radius: 20px; margin-bottom: 24px; text-align: center; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);">
                 <div style="font-size: 22px; font-weight: 800; color: white; margin-bottom: 8px;">
                     🎉 結果をシェアしてみよう！
                 </div>
@@ -608,13 +738,16 @@
                     診断結果の画像を自動生成！Xでシェアして仲間に広めよう
                 </div>
                 <div class="share-buttons">
-                    <button class="share-btn" onclick="downloadResultImage()" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53); color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; margin-bottom: 12px; border-radius: 100px; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);">
+                    <button class="share-btn" onclick="downloadResultImage()"
+                        style="background: linear-gradient(135deg, #FF6B6B, #FF8E53); color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; margin-bottom: 12px; border-radius: 100px; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);">
                         📸 結果画像をダウンロード
                     </button>
-                    <button class="share-btn share-twitter" onclick="shareTwitter()" style="background: #1DA1F2; color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; border-radius: 100px; cursor: pointer;">
+                    <button class="share-btn share-twitter" onclick="shareTwitter()"
+                        style="background: #1DA1F2; color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; border-radius: 100px; cursor: pointer;">
                         𝕏 でシェア
                     </button>
-                    <button class="share-btn share-line" onclick="shareLine()" style="background: #00B900; color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; border-radius: 100px; cursor: pointer;">
+                    <button class="share-btn share-line" onclick="shareLine()"
+                        style="background: #00B900; color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; border-radius: 100px; cursor: pointer;">
                         📱 LINEでシェア
                     </button>
                 </div>
@@ -623,7 +756,8 @@
                 </div>
             </div>
 
-            <button class="btn retry-btn" onclick="location.reload()" style="background: white; color: var(--primary); border: 2px solid var(--primary);">もう一度診断する</button>
+            <button class="btn retry-btn" onclick="location.reload()"
+                style="background: white; color: var(--primary); border: 2px solid var(--primary);">もう一度診断する</button>
         </div>
     </div>
 
@@ -1086,7 +1220,7 @@
 
         // Google Apps Script Web AppのURL（スプレッドシート連携用）
         // セットアップ後、ここにデプロイURLを貼り付けてください
-        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyEvWkpHO08uvlhUFOlYMRGnHUY9ytJteuTn2ACO8MnwuSdSMSrKHLnM2uH3imyYfFiJA/exec';
+        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzp9Pv3wvntkHWiZ9fNhMUVKMZQMt_2PjuWpkTb2zoqOg_J9Kw6Uo49jhVs3xdxRJg7xA/exec';
         // 例: 'https://script.google.com/macros/s/AKfycby.../exec'
 
         function startQuiz() {
@@ -1214,6 +1348,9 @@
 
             let result = resultTypes[resultType];
 
+            // store for later use
+            window.currentResultKey = resultType;
+
             // 受験生の場合のみ、シャロスタ一択に上書き
             if (experienceLevel === 'まだ資格を持っていない（受験生）') {
                 result = {
@@ -1250,6 +1387,11 @@
                 confidence += 5;
             }
 
+            // === 戦闘力の計算 ===
+            const combatPowerData = calculateCombatPower(riasecScores, resultType, experienceLevel);
+            const combatPower = combatPowerData.power;
+            const rank = combatPowerData.rank;
+
             // Hide question container and progress
             document.getElementById('questionContainer').innerHTML = '';
             document.getElementById('progressContainer').classList.add('hidden');
@@ -1258,6 +1400,16 @@
             document.getElementById('resultIcon').textContent = result.icon;
             document.getElementById('resultType').textContent = result.type;
             document.getElementById('resultDescription').textContent = result.description;
+
+            // Update Combat Power Display
+            document.getElementById('rankBg').textContent = rank;
+            document.getElementById('rankDisplay').textContent = `RANK ${rank} - ${combatPowerData.rankText}`;
+            document.getElementById('rankDisplay').className = `rank-display ${combatPowerData.rankClass}`;
+
+            // Animate Combat Power
+            setTimeout(() => {
+                animateValue("combatPowerValue", 0, combatPower, 2000);
+            }, 500);
 
             // Xアカウント情報表示
             const nicknameDisplayEl = document.getElementById('nicknameDisplay');
@@ -1358,6 +1510,7 @@
             window.currentNickname = userNickname || 'ゲスト';
             window.currentProfileImageUrl = userProfileImage || '';
             window.currentTwitterUsername = twitterUsername || '';
+            window.currentCombatPower = combatPowerData; // Save for share/image logic
 
             // === 平均値との比較を表示 ===
             loadAndDisplayAverageComparison(riasecScores);
@@ -1433,16 +1586,16 @@
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 13px;">
                         ${dimensions.map(dim => {
-                            const myValue = myScores[dim] || 0;
-                            const avgValue = avgScores[dim] || 0;
-                            const diff = myValue - avgValue;
-                            const diffText = diff > 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
-                            const diffColor = diff > 0 ? '#00C896' : (diff < 0 ? '#FF6B6B' : '#999');
-                            const dimNames = {
-                                R: '現実的', I: '研究的', A: '芸術的',
-                                S: '社会的', E: '企業的', C: '慣習的'
-                            };
-                            return `
+                const myValue = myScores[dim] || 0;
+                const avgValue = avgScores[dim] || 0;
+                const diff = myValue - avgValue;
+                const diffText = diff > 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
+                const diffColor = diff > 0 ? '#00C896' : (diff < 0 ? '#FF6B6B' : '#999');
+                const dimNames = {
+                    R: '現実的', I: '研究的', A: '芸術的',
+                    S: '社会的', E: '企業的', C: '慣習的'
+                };
+                return `
                                 <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
                                     <div style="font-weight: 600; color: #333; margin-bottom: 4px;">${dim} (${dimNames[dim]})</div>
                                     <div style="font-size: 16px; font-weight: 700; color: var(--primary);">あなた: ${myValue}</div>
@@ -1450,7 +1603,7 @@
                                     <div style="font-size: 14px; font-weight: 700; color: ${diffColor}; margin-top: 4px;">${diffText}</div>
                                 </div>
                             `;
-                        }).join('')}
+            }).join('')}
                     </div>
                 </div>
             `;
@@ -1599,9 +1752,73 @@
             canvas.height = 1920;
             const ctx = canvas.getContext('2d');
 
-            // 背景: 純白
+            // 背景 (タイプ x ランク別アニメ画像)
+            // 生成済み: Rank C全種, Rank B(practicitioner, expert, entrepreneur)
+            // その他は近似画像へフォールバック
+            const bgImageMap = {
+                // Beginner
+                'beginner_c': 'assets/type_beginner_rank_c_anime.png',
+                'beginner_b': 'assets/type_beginner_rank_b_anime.png',
+                'beginner_a': 'assets/type_beginner_rank_a_anime.png',
+                'beginner_s': 'assets/type_beginner_rank_s_anime.png',
+
+                // Practitioner
+                'practitioner_c': 'assets/type_practitioner_rank_c_anime.png',
+                'practitioner_b': 'assets/type_practitioner_rank_b_anime.png',
+                'practitioner_a': 'assets/type_practitioner_rank_a_anime.png',
+                'practitioner_s': 'assets/type_practitioner_rank_s_anime.png',
+
+                // Expert
+                'expert_c': 'assets/type_expert_rank_c_anime.png',
+                'expert_b': 'assets/type_expert_rank_b_anime.png',
+                'expert_a': 'assets/type_expert_rank_a_anime.png',
+                'expert_s': 'assets/type_expert_rank_s_anime.png',
+
+                // Entrepreneur
+                'entrepreneur_c': 'assets/type_entrepreneur_rank_c_anime.png',
+                'entrepreneur_b': 'assets/type_entrepreneur_rank_b_anime.png',
+                'entrepreneur_a': 'assets/type_entrepreneur_rank_a_anime.png',
+                'entrepreneur_s': 'assets/type_entrepreneur_rank_s_anime.png',
+            };
+
+            // タイプとランクの取得
+            const resultKey = window.currentResultKey || 'beginner';
+            const rankKey = window.currentCombatPower ? window.currentCombatPower.rank.toLowerCase() : 'c';
+
+            // 下位互換とフォールバックロジック
+            let bgUrl = bgImageMap[`${resultKey}_${rankKey}`];
+
+            if (!bgUrl) {
+                // そのランクがない場合、Rank B -> Rank C の順で探す
+                bgUrl = bgImageMap[`${resultKey}_b`] || bgImageMap[`${resultKey}_c`];
+            }
+            // それでもない場合（Beginner Bなど）、Beginner Cへ
+            if (!bgUrl && resultKey === 'beginner') {
+                bgUrl = bgImageMap['beginner_c'];
+            }
+
+            try {
+                // 画像読み込み
+                const bgImg = await loadImage(bgUrl);
+                // 画像がある場合（アスペクト比を維持しつつカバー）
+                ctx.drawImage(bgImg, 0, 0, 1080, 1920);
+
+                // オーバーレイ (文字を読みやすくするため少し暗く)
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+                ctx.fillRect(0, 0, 1080, 1920);
+
+            } catch (e) {
+                console.warn('背景画像読み込み失敗:', e);
+                // フォールバック: グラデーション
+                const gradient = ctx.createLinearGradient(0, 0, 1080, 1920);
+                gradient.addColorStop(0, '#667eea');
+                gradient.addColorStop(1, '#764ba2');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, 1080, 1920);
+            }
+
+            // 文字色を白に変更（背景が暗くなるため）
             ctx.fillStyle = '#FFFFFF';
-            ctx.fillRect(0, 0, 1080, 1920);
 
             let currentY = 120;
 
@@ -1612,17 +1829,17 @@
                     const size = 160;
                     ctx.save();
                     ctx.beginPath();
-                    ctx.arc(540, currentY + size/2, size/2, 0, Math.PI * 2);
+                    ctx.arc(540, currentY + size / 2, size / 2, 0, Math.PI * 2);
                     ctx.closePath();
                     ctx.clip();
-                    ctx.drawImage(img, 540 - size/2, currentY, size, size);
+                    ctx.drawImage(img, 540 - size / 2, currentY, size, size);
                     ctx.restore();
 
                     // 円の枠線（極薄）
                     ctx.strokeStyle = '#E0E0E0';
                     ctx.lineWidth = 2;
                     ctx.beginPath();
-                    ctx.arc(540, currentY + size/2, size/2, 0, Math.PI * 2);
+                    ctx.arc(540, currentY + size / 2, size / 2, 0, Math.PI * 2);
                     ctx.stroke();
 
                     currentY += size + 40;
@@ -1682,7 +1899,51 @@
             ctx.font = '500 36px system-ui, -apple-system, sans-serif';
             ctx.fillStyle = '#666666';
             ctx.fillText(result.badge, 540, currentY);
-            currentY += 100;
+            currentY += 80;
+
+            // === 戦闘力 & ランク ===
+            const power = window.currentCombatPower ? window.currentCombatPower.power.toLocaleString() : '???';
+            const rank = window.currentCombatPower ? window.currentCombatPower.rank : '?';
+
+            // 背景ボックス (黒っぽいグラデ)
+            const gradient = ctx.createLinearGradient(140, currentY, 940, currentY + 200);
+            gradient.addColorStop(0, '#1a1a1a');
+            gradient.addColorStop(1, '#2a2a2a');
+            ctx.fillStyle = gradient;
+
+            // 角丸矩形を描画 (roundRectの互換性のため、シンプルなrectにするかpolyfillを使うが、最新ブラウザならOK。念のため自前実装は避けてシンプルに)
+            ctx.beginPath();
+            // ctx.roundRect(140, currentY, 800, 220, 20); // 一部の環境で未対応の可能性
+            ctx.rect(140, currentY, 800, 220); // 安全策
+            ctx.fill();
+
+            // ラベル
+            ctx.fillStyle = '#AAAAAA';
+            ctx.textAlign = 'center';
+            ctx.font = '700 24px system-ui, -apple-system, sans-serif';
+            ctx.fillText('POTENTIAL POWER', 540, currentY + 50);
+
+            // パワー数値
+            ctx.fillStyle = '#FFD700';
+            ctx.font = '900 100px "Arial Black", "Impact", sans-serif';
+            // 影をつける
+            ctx.shadowColor = 'rgba(255, 215, 0, 0.5)';
+            ctx.shadowBlur = 20;
+            ctx.fillText(power, 540, currentY + 150);
+            ctx.shadowBlur = 0; // リセット
+
+            // ランクスタンプ
+            ctx.save();
+            ctx.translate(880, currentY + 110);
+            ctx.rotate(15 * Math.PI / 180);
+            ctx.fillStyle = rank === 'S' ? 'rgba(255, 215, 0, 0.3)' : 'rgba(255, 255, 255, 0.1)';
+            ctx.font = '900 200px "Arial Black", "Impact", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(rank, 0, 0);
+            ctx.restore();
+
+            currentY += 280;
 
             // セパレーター
             ctx.strokeStyle = '#E0E0E0';
@@ -1859,21 +2120,34 @@
             const riasecCode = window.currentRiasecCode || '';
             const rarityEmoji = result.rarityLevel === '激レア' ? '⭐' : result.rarityLevel === 'レア' ? '✨' : '🔹';
 
-            // 診断ツールのURL
-            const baseUrl = window.location.origin + window.location.pathname;
+            // 診断ツールのURL (Dynamic OGP対応版)
+            // 現在のorigin + /api/share にパラメータを付与
+            const shareBaseUrl = new URL('/api/share', window.location.origin);
+            // typeパラメータにはキー（beginner, etc）を渡す
+            const typeKey = window.currentResultKey || 'beginner';
+            shareBaseUrl.searchParams.set('type', typeKey);
+            shareBaseUrl.searchParams.set('power', window.currentCombatPower ? window.currentCombatPower.power : 0);
+            shareBaseUrl.searchParams.set('rank', window.currentCombatPower ? window.currentCombatPower.rank : 'C');
+            shareBaseUrl.searchParams.set('name', window.currentNickname || 'ゲスト');
+            shareBaseUrl.searchParams.set('riasec', riasecCode);
+
+            const shareUrl = shareBaseUrl.toString();
 
             // シェアテキスト（280文字以内）
-            const text = `【${rarityEmoji} ${result.rarityLevel}】私の社労士キャリアは「${result.type}」！
+            // ポテンシャル（戦闘力）とランクを含める
+            const power = window.currentCombatPower ? window.currentCombatPower.power.toLocaleString() : '???';
+            const rank = window.currentCombatPower ? window.currentCombatPower.rank : '?';
+
+            // URLがすでに情報を語っているので、テキストはシンプルに
+            const text = `私の社労士戦闘力は「${power}」です…！
+ランク: ${rank} | タイプ: ${result.type}
 ${result.badge}
 
-全体の${result.rarity}%のタイプ
-RIASECコード: ${riasecCode}
-
-あなたも診断してみよう👇
 #社労士キャリア診断 #社労士`;
 
             // Xアプリを開く（スマホならアプリ、PCならWeb）
-            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(baseUrl)}`;
+            // URLパラメータは2重エンコードが必要な場合があるが、ここでは標準のencodeURIComponentで
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`;
             window.location.href = twitterUrl; // window.openではなくlocation.hrefでアプリ連携
         }
 
@@ -1884,6 +2158,64 @@ RIASECコード: ${riasecCode}
             const text = `私の社労士キャリアタイプは「${result.type}」でした！${result.badge}\n\nあなたも診断してみて！`;
             window.open(`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(baseUrl)}&text=${encodeURIComponent(text)}`, '_blank');
         }
+
+        // 戦闘力の計算
+        function calculateCombatPower(riasecScores, resultType, experienceLevel) {
+            // 基礎点: RIASECトータルスコア (Max 18 * 6 = 108)
+            const totalRiasec = Object.values(riasecScores).reduce((a, b) => a + b, 0);
+
+            // 経験値ボーナス (フリーザ様リスペクト)
+            let basePower = 530000;
+
+            // 基礎値をスコアに応じて変動させる
+            const randomFactor = Math.floor(Math.random() * 5000) * (totalRiasec % 10);
+
+            // 経験レベル補正
+            if (experienceLevel.includes('3年以上')) basePower += 320000; // 85万超え
+            else if (experienceLevel.includes('1-3年')) basePower += 150000; // 68万
+            else if (experienceLevel.includes('取得したばかり')) basePower += 50000; // 58万
+
+            // RIASECスコア補正 (Max 108 * 2000 = +216,000)
+            basePower += (totalRiasec * 2500);
+
+            // タイプ別ボーナス (特性に合わせて)
+            if (resultType === 'entrepreneur') basePower *= 1.15; // 独立はハイリスクハイリターン
+            if (resultType === 'expert') basePower *= 1.1; // 専門家は堅実に高い
+
+            // 桁数を整える
+            let finalPower = Math.floor(basePower + randomFactor);
+            if (finalPower > 999999) finalPower = 999999; // 上限クリップ
+
+            // ランク判定
+            let rank = 'C';
+            let rankText = '見習い級';
+            let rankClass = 'rank-b';
+
+            if (finalPower >= 850000) { rank = 'S'; rankText = '伝説級'; rankClass = 'rank-s'; }
+            else if (finalPower >= 700000) { rank = 'A'; rankText = '達人級'; rankClass = 'rank-a'; }
+            else if (finalPower >= 500000) { rank = 'B'; rankText = '実務家級'; rankClass = 'rank-b'; }
+            else { rank = 'C'; rankText = '駆け出し'; rankClass = 'rank-b'; }
+
+            return { power: finalPower, rank, rankText, rankClass };
+        }
+
+        function animateValue(id, start, end, duration) {
+            if (start === end) return;
+            const range = end - start;
+            let current = start;
+            const increment = end > start ? Math.max(1, Math.floor(range / 50)) : -1;
+            const stepTime = Math.abs(Math.floor(duration / (range / increment)));
+            const obj = document.getElementById(id);
+            const timer = setInterval(function () {
+                current += increment;
+                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                obj.innerHTML = current.toLocaleString();
+            }, stepTime);
+        }
     </script>
 </body>
+
 </html>

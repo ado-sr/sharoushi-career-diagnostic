@@ -16,6 +16,10 @@ function doPost(e) {
     // JSONデータを解析
     const data = JSON.parse(e.postData.contents);
 
+    // デバッグ: 受信データをログに記録
+    Logger.log('受信データ: ' + JSON.stringify(data));
+    Logger.log('userAnswers: ' + JSON.stringify(data.userAnswers));
+
     // スプレッドシートを取得（このスクリプトが紐づいているシート）
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
@@ -84,6 +88,11 @@ function doPost(e) {
       allAnswersText = answersArray.map(answer =>
         `Q${answer.questionNumber}: ${answer.question} → ${answer.answer}`
       ).join('\n');
+
+      // デバッグ: 変換後のテキストをログに記録
+      Logger.log('全回答詳細（変換後）: ' + allAnswersText);
+    } else {
+      Logger.log('userAnswersがありません！');
     }
 
     // データ行を作成
@@ -115,6 +124,12 @@ function doPost(e) {
 
     // 行を追加
     sheet.appendRow(row);
+    const newRowNumber = sheet.getLastRow();
+
+    // 詳細データを別シートに保存
+    if (data.userAnswers) {
+      saveAnswerDetails(data.userAnswers, data.nickname || 'ゲスト', data.timestamp, newRowNumber);
+    }
 
     // 成功レスポンス
     return ContentService

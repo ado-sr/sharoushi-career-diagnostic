@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGP画像生成</title>
+</head>
+<body style="margin: 0; padding: 20px; background: #f0f0f0;">
+    <canvas id="canvas" width="1200" height="630"></canvas>
+    <div style="margin-top: 20px;">
+        <button onclick="downloadImage()" style="padding: 12px 24px; background: #0066FF; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+            画像をダウンロード (ogp-image.png)
+        </button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 背景グラデーション
+        const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+        gradient.addColorStop(0, '#0066FF');
+        gradient.addColorStop(1, '#00C896');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 1200, 630);
+
+        // 半透明オーバーレイ
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        ctx.fillRect(0, 0, 1200, 630);
+
+        // テキスト設定
+        ctx.fillStyle = '#FFFFFF';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        // メインタイトル
+        ctx.font = 'bold 72px "Hiragino Sans", "Meiryo", sans-serif';
+        ctx.fillText('社労士キャリア診断', 600, 200);
+
+        // サブタイトル
+        ctx.font = '36px "Hiragino Sans", "Meiryo", sans-serif';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.fillText('Schein × Holland 理論に基づく', 600, 280);
+        ctx.fillText('科学的キャリア診断', 600, 330);
+
+        // 説明文
+        ctx.font = '28px "Hiragino Sans", "Meiryo", sans-serif';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+        ctx.fillText('✨ たった3分で、あなたに最適なキャリアパスがわかる', 600, 420);
+
+        // ロゴ/ブランド
+        ctx.font = 'bold 32px "Hiragino Sans", "Meiryo", sans-serif';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillText('社労士Lab', 600, 530);
+
+        function downloadImage() {
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'ogp-image.png';
+                a.click();
+                URL.revokeObjectURL(url);
+                alert('✅ ogp-image.png をダウンロードしました！\n\nこのファイルを Netlify にアップロードしてください。');
+            });
+        }
+    </script>
+</body>
+</html>
