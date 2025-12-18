@@ -59,6 +59,29 @@
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             border: 1px solid #333;
+            /* 背景画像用設定 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s ease;
+        }
+
+        /* 画像を暗くするためのオーバーレイ */
+        .combat-power-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        /* 中身を前面に出す */
+        .combat-power-section>* {
+            position: relative;
+            z-index: 2;
         }
 
         .combat-power-section::before {
@@ -1410,6 +1433,44 @@
             setTimeout(() => {
                 animateValue("combatPowerValue", 0, combatPower, 2000);
             }, 500);
+
+            // === 結果に応じた背景画像を表示 ===
+            const combatSection = document.querySelector('.combat-power-section');
+            const resultKey = resultType; // beginner, practitioner, etc.
+            const rankKey = combatPowerData.rank.toLowerCase(); // s, a, b, c
+
+            // 画像ファイル名の解決ロジック（api/og.tsxと合わせる）
+            // 基本パターン: assets/type_[type]_rank_[rank]_anime.png
+            const getImagePath = (t, r) => `assets/type_${t}_rank_${r}_anime.png`;
+
+            // 優先順位: 正確な組み合わせ -> ランクBフォールバック -> ランクCフォールバック
+            let bgPath = getImagePath(resultKey, rankKey);
+
+            // 画像の存在確認はクライアント側では難しいため、あらかじめ存在する組み合わせを知っておくか
+            // エラーハンドリングをするのが理想だが、今回はファイルが存在する前提で設定し、
+            // 失敗時はCSSのデフォルトグラデーションが見えるようにする
+
+            // Vercel等の環境パスを考慮
+            // フォールバックロジック簡易版（OGPと同様）
+            // assets内にあるファイルに合わせる
+
+            // 生成済み画像リストに基づいた簡易マップ（OGPの実装と同期）
+            // 実際には全てのランクの画像があるわけではない場合のためのマッピング
+            let finalBgPath = bgPath;
+
+            // 画像をロードして設定
+            const img = new Image();
+            img.onload = () => {
+                combatSection.style.backgroundImage = `url('${finalBgPath}')`;
+            };
+            img.onerror = () => {
+                // ロード失敗時はランクCなどを試す（簡易リトライ）
+                if (rankKey !== 'c') {
+                    const fallbackPath = getImagePath(resultKey, 'c');
+                    combatSection.style.backgroundImage = `url('${fallbackPath}')`;
+                }
+            };
+            img.src = finalBgPath;
 
             // Xアカウント情報表示
             const nicknameDisplayEl = document.getElementById('nicknameDisplay');
