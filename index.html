@@ -1420,7 +1420,12 @@
             document.getElementById('progressContainer').classList.add('hidden');
 
             // Show result
-            document.getElementById('resultIcon').textContent = result.icon;
+            // document.getElementById('resultIcon').textContent = result.icon; // 旧: アイコン（絵文字）を表示
+
+            // 新: キャラクター画像を表示
+            // 画像パスは上で計算した finalBgPath を使用
+            // 表示サイズを調整するためにスタイルも適用
+            document.getElementById('resultIcon').innerHTML = `<img src="${finalBgPath}" alt="${result.type}" style="width: 100%; max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">`;
             document.getElementById('resultType').textContent = result.type;
             document.getElementById('resultDescription').textContent = result.description;
 

@@ -16,11 +16,19 @@
         {
             "src": "server/server.js",
             "use": "@vercel/node"
+        },
+        {
+            "src": "api/*.{ts,tsx}",
+            "use": "@vercel/edge"
         }
     ],
     "rewrites": [
         {
-            "source": "/api/(.*)",
+            "source": "/api/health",
+            "destination": "/server/server.js"
+        },
+        {
+            "source": "/api/twitter-user/(.*)",
             "destination": "/server/server.js"
         }
     ]
