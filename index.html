@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社労士キャリア診断 | Schein×Holland理論に基づく科学的診断 | 社労士Lab</title>
+    <meta name="description" content="MIT教授が開発したキャリア・アンカー理論と世界標準のRIASEC理論に基づく、エビデンスベースの社労士キャリア診断。たった3分で、あなたに最適なキャリアパスが見つかります。">
+    <meta name="keywords" content="社労士,キャリア診断,キャリアアンカー,Schein,Holland,RIASEC,職業適性,社労士Lab">
+    <meta property="og:title" content="社労士キャリア診断 | Schein×Holland理論に基づく科学的診断">
+    <meta property="og:description" content="MIT教授が開発したキャリア・アンカー理論×世界標準のRIASEC理論。科学的根拠に基づくエビデンスベースの診断で、あなたに最適な社労士キャリアパスを発見。">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="社労士キャリア診断 | Schein×Holland理論に基づく科学的診断">
+    <meta name="twitter:description" content="MIT教授が開発したキャリア理論×世界標準の職業興味理論。たった3分で最適なキャリアパスがわかる！">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066FF;
+            --secondary: #00C896;
+            --accent: #FF6B6B;
+            --dark: #1A1A1A;
+            --light: #F8F9FA;
+            --border: #E5E5E5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
+            }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .start-screen {
+            text-align: center;
+        }
+
+        .start-screen h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .start-screen p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .theory-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.2);
+        }
+
+        .theory-highlights {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin: 32px 0;
+            padding: 24px;
+            background: linear-gradient(135deg, #f8f9ff, #fff5f8);
+            border-radius: 16px;
+            border: 2px solid #e8eeff;
+        }
+
+        .theory-item {
+            text-align: center;
+        }
+
+        .theory-icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .theory-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .theory-divider {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .theory-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            padding: 0 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 48px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 100px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #0052cc;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .progress-container {
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 100px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 100px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .question-screen {
+            display: none;
+        }
+
+        .question-screen.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .question-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 32px;
+            line-height: 1.4;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .option {
+            padding: 20px;
+            background: var(--light);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+            background: #f0f7ff;
+            transform: translateX(4px);
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+        }
+
+        .result-screen {
+            display: none;
+            text-align: center;
+        }
+
+        .result-screen.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result-icon {
+            font-size: 80px;
+            margin-bottom: 24px;
+        }
+
+        .result-type {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .result-description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .result-details {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .result-details h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .result-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .result-details li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: #444;
+        }
+
+        .result-details li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .cta-section h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .share-btn {
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-line {
+            background: #06C755;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .retry-btn {
+            margin-top: 16px;
+            font-size: 16px;
+            padding: 14px 32px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px;
+            }
+
+            .start-screen h2 {
+                font-size: 24px;
+            }
+
+            .question-title {
+                font-size: 20px;
+            }
+
+            .result-type {
+                font-size: 28px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>社労士Lab</h1>
+            <p>キャリア診断ツール</p>
+        </div>
+
+        <div class="start-screen" id="startScreen">
+            <div class="theory-badge">
+                📚 科学的根拠に基づく診断
+            </div>
+            <h2>あなたに最適な<br>社労士キャリアは？</h2>
+            <p>あなたの状況に合わせた質問で、<br>理想の働き方が見つかります</p>
+
+            <div class="theory-highlights">
+                <div class="theory-item">
+                    <div class="theory-icon">🎓</div>
+                    <div class="theory-name">Schein<br>キャリア・アンカー理論</div>
+                </div>
+                <div class="theory-divider">×</div>
+                <div class="theory-item">
+                    <div class="theory-icon">🔬</div>
+                    <div class="theory-name">Holland<br>RIASEC理論</div>
+                </div>
+            </div>
+
+            <div class="theory-description">
+                MIT教授が開発したキャリア価値観分類と、<br>
+                世界標準の職業興味理論を統合した<br>
+                エビデンスベースの診断ツールです
+            </div>
+
+            <div style="margin: 24px 0;">
+                <div style="position: relative; width: 100%; max-width: 400px; margin: 0 auto;">
+                    <input type="text" id="twitterUsernameInput" placeholder="Xアカウント名を入力（例: @ado_sr）" style="width: 100%; padding: 12px 120px 12px 12px; border: 2px solid #e0e0e0; border-radius: 100px; font-size: 14px; text-align: center; outline: none; transition: border-color 0.3s;" onfocus="this.style.borderColor='#0066FF'" onblur="this.style.borderColor='#e0e0e0'">
+                    <button onclick="fetchTwitterUser()" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); background: linear-gradient(135deg, #0066FF, #00C896); color: white; border: none; padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">取得</button>
+                </div>
+                <div id="twitterUserPreview" style="margin-top: 12px; display: none; text-align: center;">
+                    <img id="twitterUserAvatar" src="" alt="Profile" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #0066FF; vertical-align: middle; margin-right: 8px;">
+                    <span id="twitterUserName" style="font-size: 14px; font-weight: 600; color: #333;"></span>
+                </div>
+                <div id="twitterUserError" style="font-size: 12px; color: #FF6B6B; margin-top: 8px; display: none;"></div>
+                <div style="font-size: 12px; color: #888; margin-top: 8px;">診断結果にアイコンとニックネームが表示されます（任意）</div>
+            </div>
+
+            <button class="btn" onclick="startQuiz()">診断をはじめる（無料・約3分）</button>
+        </div>
+
+        <div class="progress-container hidden" id="progressContainer">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">
+                質問 <span id="currentQuestion">0</span> / <span id="totalQuestions">24</span>
+            </div>
+        </div>
+
+        <div id="questionContainer"></div>
+
+        <div class="result-screen" id="resultScreen">
+            <!-- レア度表示（目立つ演出） -->
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div id="rarityBadge" style="display: inline-block; padding: 8px 24px; border-radius: 100px; font-size: 14px; font-weight: 800; color: white; background: linear-gradient(135deg, #FF6B6B, #FF8E53); box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); animation: pulse 2s infinite;">
+                    ⭐ 激レア ⭐
+                </div>
+                <div style="font-size: 13px; color: #666; margin-top: 8px;">
+                    このタイプは全体の <span id="rarityPercent" style="font-weight: 800; font-size: 18px; color: #FF6B6B;">10%</span> だけ！
+                </div>
+            </div>
+
+            <div class="result-icon" id="resultIcon"></div>
+            <div class="result-type" id="resultType"></div>
+
+            <!-- ニックネーム表示 -->
+            <div id="nicknameDisplay" style="text-align: center; font-size: 16px; color: #555; margin: 12px 0; font-weight: 600;"></div>
+
+            <!-- 称号バッジ -->
+            <div style="text-align: center; margin: 16px 0;">
+                <div id="badgeDisplay" style="font-size: 20px; font-weight: 700; color: var(--primary);">
+                    💎 ビジョナリー・リーダー
+                </div>
+            </div>
+
+            <!-- キャッチフレーズ -->
+            <div id="catchPhrase" style="text-align: center; font-size: 18px; font-weight: 700; color: #FF6B6B; margin-bottom: 16px; padding: 12px; background: linear-gradient(135deg, #fff5f5, #fff8e1); border-radius: 12px; border: 2px dashed #FF6B6B;">
+                次世代を創る起業家マインドの持ち主！
+            </div>
+
+            <div class="result-description" id="resultDescription"></div>
+
+            <!-- バイラルメッセージ -->
+            <div id="viralMessage" style="text-align: center; font-size: 16px; font-weight: 600; color: var(--dark); margin: 20px 0; padding: 16px; background: linear-gradient(135deg, #f0f9ff, #fef3f0); border-radius: 12px; border-left: 4px solid var(--primary);">
+                野心と行動力を兼ね備えた稀少人材！あなたは全体のわずか10%💫
+            </div>
+
+            <div class="result-details">
+                <h3>あなたの特徴</h3>
+                <ul id="resultTraits"></ul>
+            </div>
+
+            <div class="result-details" style="background: linear-gradient(135deg, #f0f7ff, #fff5f0); border: 2px solid #e0f0ff;">
+                <h3>📊 あなたのRIASECコード（Holland理論）</h3>
+                <div style="text-align: center; margin: 16px 0;">
+                    <div style="font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 8px;" id="riasecCode">S-E-I</div>
+                    <div style="font-size: 14px; color: #666;" id="riasecDetails">S(12点) E(10点) I(8点)</div>
+                </div>
+
+                <!-- RIASEC六角形チャート -->
+                <div style="display: flex; justify-content: center; margin: 24px 0;">
+                    <svg id="riasecHexagon" width="280" height="280" viewBox="0 0 280 280">
+                        <!-- 背景グリッド -->
+                        <polygon points="140,40 210,85 210,175 140,220 70,175 70,85" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+                        <polygon points="140,70 190,100 190,160 140,190 90,160 90,100" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+                        <polygon points="140,100 170,115 170,145 140,160 110,145 110,115" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+
+                        <!-- データ多角形 -->
+                        <polygon id="riasecDataPolygon" points="140,40 210,85 210,175 140,220 70,175 70,85" fill="rgba(0, 102, 255, 0.2)" stroke="#0066FF" stroke-width="2.5"/>
+
+                        <!-- ラベル -->
+                        <text x="140" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#333">R</text>
+                        <text x="225" y="90" text-anchor="start" font-size="14" font-weight="700" fill="#333">I</text>
+                        <text x="225" y="180" text-anchor="start" font-size="14" font-weight="700" fill="#333">A</text>
+                        <text x="140" y="240" text-anchor="middle" font-size="14" font-weight="700" fill="#333">S</text>
+                        <text x="55" y="180" text-anchor="end" font-size="14" font-weight="700" fill="#333">E</text>
+                        <text x="55" y="90" text-anchor="end" font-size="14" font-weight="700" fill="#333">C</text>
+
+                        <!-- 中心点 -->
+                        <circle cx="140" cy="130" r="3" fill="#0066FF"/>
+                    </svg>
+                </div>
+
+                <!-- RIASEC各次元の詳細スコア -->
+                <div id="riasecBreakdown" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 16px 0; font-size: 13px;">
+                    <!-- JSで動的に生成 -->
+                </div>
+
+                <div style="font-size: 11px; color: #888; text-align: center; margin-bottom: 12px;">
+                    R:現実的 I:研究的 A:芸術的 S:社会的 E:企業的 C:慣習的
+                </div>
+
+                <div style="background: white; padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.6; color: #555;">
+                    <strong>RIASEC 3-letter code:</strong> あなたの職業興味を上位3つの次元で表現したコードです。数値が高い次元ほど、その興味が強いことを示します。
+                </div>
+            </div>
+
+            <div class="result-details" style="background: linear-gradient(135deg, #fff5f8, #f5fff8); border: 2px solid #ffe0f0;">
+                <h3>🎯 診断信頼度</h3>
+                <div style="margin: 16px 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span style="font-weight: 600; color: var(--dark);">信頼度レベル:</span>
+                        <span style="font-size: 24px; font-weight: 800; color: var(--primary);" id="confidenceLevel">85%</span>
+                    </div>
+                    <div style="width: 100%; height: 12px; background: #e8e8e8; border-radius: 100px; overflow: hidden;">
+                        <div id="confidenceBar" style="height: 100%; width: 85%; background: #00C896; transition: all 0.5s ease;"></div>
+                    </div>
+                </div>
+                <div style="background: white; padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.6; color: #555; margin-top: 12px;">
+                    <strong>信頼度について:</strong> Scheinの理論では、キャリア・アンカーは実務経験を通じて明確化されます。あなたの経験レベルと回答の一貫性から算出された信頼度です。
+                </div>
+            </div>
+
+            <div class="result-details theoretical-basis">
+                <h3>📚 診断の理論的根拠</h3>
+                <div style="margin-bottom: 12px;">
+                    <strong>キャリア・アンカー（Schein）:</strong>
+                    <div id="scheinAnchor" style="color: #666; margin-top: 4px;"></div>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <strong>職業興味タイプ（Holland）:</strong>
+                    <div id="hollandCode" style="color: #666; margin-top: 4px;"></div>
+                </div>
+                <div style="margin-top: 16px; padding: 16px; background: #f8f9fa; border-radius: 8px; font-size: 14px; line-height: 1.7; color: #555;">
+                    <div id="theoreticalExplanation"></div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3 id="ctaTitle">次のステップへ</h3>
+                <p id="ctaDescription"></p>
+                <a class="btn btn-secondary" id="ctaButton" href="#" target="_blank">詳しく見る</a>
+            </div>
+
+            <!-- シェア促進セクション（目立つデザイン） -->
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 32px; border-radius: 20px; margin-bottom: 24px; text-align: center; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);">
+                <div style="font-size: 22px; font-weight: 800; color: white; margin-bottom: 8px;">
+                    🎉 結果をシェアしてみよう！
+                </div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.9); margin-bottom: 20px;">
+                    診断結果の画像を自動生成！Xでシェアして仲間に広めよう
+                </div>
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="downloadResultImage()" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53); color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; margin-bottom: 12px; border-radius: 100px; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);">
+                        📸 結果画像をダウンロード
+                    </button>
+                    <button class="share-btn share-twitter" onclick="shareTwitter()" style="background: #1DA1F2; color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; border-radius: 100px; cursor: pointer;">
+                        𝕏 でシェア
+                    </button>
+                    <button class="share-btn share-line" onclick="shareLine()" style="background: #00B900; color: white; border: none; font-size: 16px; padding: 14px 32px; font-weight: 700; border-radius: 100px; cursor: pointer;">
+                        📱 LINEでシェア
+                    </button>
+                </div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.8); margin-top: 16px;">
+                    💡 シェアすることで、より多くの社労士仲間とつながれます
+                </div>
+            </div>
+
+            <button class="btn retry-btn" onclick="location.reload()" style="background: white; color: var(--primary); border: 2px solid var(--primary);">もう一度診断する</button>
+        </div>
+    </div>
+
+    <script>
+        // 条件分岐型の質問構造
+        const questionFlow = {
+            // 最初の質問（分岐の起点）
+            start: {
+                id: 'experience',
+                question: "社労士としての経験年数は？",
+                options: [
+                    { text: "まだ資格を持っていない（受験生）", next: 'beginner_path', score: { beginner: 5 } },
+                    { text: "資格取得したばかり（実務未経験）", next: 'newbie_path', score: { beginner: 3, practitioner: 2 } },
+                    { text: "実務経験1-3年", next: 'practitioner_path', score: { practitioner: 5 } },
+                    { text: "実務経験3年以上", next: 'expert_path', score: { expert: 5 } }
+                ]
+            },
+
+            // 受験生向けパス（2問に削減）
+            beginner_path: {
+                id: 'study_style',
+                question: "社労士を目指した理由は？",
+                options: [
+                    { text: "安定した専門職に就きたい", next: 'beginner_career', score: { practitioner: 4, beginner: 3 } },
+                    { text: "独立開業したい", next: 'beginner_career', score: { entrepreneur: 5 } },
+                    { text: "専門性を活かしたい", next: 'beginner_career', score: { expert: 4 } },
+                    { text: "仲間と学びたい", next: 'beginner_career', score: { beginner: 5 } }
+                ]
+            },
+            beginner_career: {
+                id: 'post_exam_vision',
+                question: "合格後、どこで働きたい？",
+                options: [
+                    { text: "社労士事務所", next: 'common_priority', score: { practitioner: 5 } },
+                    { text: "企業の人事部", next: 'common_priority', score: { practitioner: 4 } },
+                    { text: "独立開業", next: 'common_priority', score: { entrepreneur: 5 } },
+                    { text: "まだ決めていない", next: 'common_priority', score: { beginner: 4 } }
+                ]
+            },
+
+            // 合格者向けパス
+            newbie_path: {
+                id: 'job_search',
+                question: "就職活動の状況は？",
+                options: [
+                    { text: "積極的に活動中", next: 'newbie_interest', score: { practitioner: 4 } },
+                    { text: "これから始める", next: 'newbie_interest', score: { beginner: 3, practitioner: 2 } },
+                    { text: "独立を検討中", next: 'newbie_interest', score: { entrepreneur: 5 } },
+                    { text: "方向性を模索中", next: 'newbie_interest', score: { beginner: 4 } }
+                ]
+            },
+            newbie_interest: {
+                id: 'business_interest',
+                question: "どの業務に興味がありますか？",
+                options: [
+                    { text: "1号・2号業務（手続き・給与計算）", next: 'common_priority', score: { practitioner: 4 } },
+                    { text: "3号業務（労務相談・コンサル）", next: 'common_priority', score: { expert: 5 } },
+                    { text: "どちらもバランスよく", next: 'common_priority', score: { practitioner: 2, expert: 2 } },
+                    { text: "まだよくわからない", next: 'common_priority', score: { beginner: 4 } }
+                ]
+            },
+
+            // 実務者向けパス
+            practitioner_path: {
+                id: 'current_work',
+                question: "現在の主な業務は？",
+                options: [
+                    { text: "手続き・給与計算中心", next: 'practitioner_satisfaction', score: { practitioner: 5 } },
+                    { text: "労務相談も担当", next: 'practitioner_satisfaction', score: { expert: 4 } },
+                    { text: "幅広く対応", next: 'practitioner_satisfaction', score: { practitioner: 3, expert: 2 } },
+                    { text: "企業内社労士", next: 'practitioner_satisfaction', score: { practitioner: 4 } }
+                ]
+            },
+            practitioner_satisfaction: {
+                id: 'career_satisfaction',
+                question: "現在の仕事に満足していますか？",
+                options: [
+                    { text: "満足している（スキルアップしたい）", next: 'common_priority', score: { expert: 4 } },
+                    { text: "まあ満足（現状維持）", next: 'common_priority', score: { practitioner: 4 } },
+                    { text: "転職を検討中", next: 'common_priority', score: { practitioner: 3, entrepreneur: 2 } },
+                    { text: "独立を視野に入れている", next: 'common_priority', score: { entrepreneur: 5 } }
+                ]
+            },
+
+            // ベテラン向けパス
+            expert_path: {
+                id: 'specialization',
+                question: "専門分野はありますか？",
+                options: [
+                    { text: "ある（さらに深めたい）", next: 'expert_aspiration', score: { expert: 5 } },
+                    { text: "ある（広げたい）", next: 'expert_aspiration', score: { expert: 4, entrepreneur: 1 } },
+                    { text: "これから作りたい", next: 'expert_aspiration', score: { expert: 4 } },
+                    { text: "幅広く対応している", next: 'expert_aspiration', score: { practitioner: 3, entrepreneur: 2 } }
+                ]
+            },
+            expert_aspiration: {
+                id: 'future_plan',
+                question: "今後のキャリアプランは？",
+                options: [
+                    { text: "専門家としてさらに深化", next: 'common_priority', score: { expert: 5 } },
+                    { text: "独立・事業拡大", next: 'common_priority', score: { entrepreneur: 5 } },
+                    { text: "後進の育成", next: 'common_priority', score: { expert: 3, practitioner: 2 } },
+                    { text: "新しい分野に挑戦", next: 'common_priority', score: { expert: 4, entrepreneur: 1 } }
+                ]
+            },
+
+            // 全員共通の質問（2問）
+            common_priority: {
+                id: 'career_priority',
+                question: "キャリアで重視することは？",
+                options: [
+                    { text: "専門性を高めたい", next: 'common_ai', score: { expert: 5 } },
+                    { text: "安定した収入を得たい", next: 'common_ai', score: { practitioner: 5 } },
+                    { text: "大きく稼ぎたい", next: 'common_ai', score: { entrepreneur: 5 } },
+                    { text: "バランス重視", next: 'common_ai', score: { practitioner: 3 } }
+                ]
+            },
+            common_ai: {
+                id: 'ai_interest',
+                question: "AI・テクノロジーへの関心は？",
+                options: [
+                    { text: "積極的に活用したい", next: 'riasec_s1', score: { entrepreneur: 3, expert: 2 } },
+                    { text: "必要に応じて使う", next: 'riasec_s1', score: { practitioner: 4 } },
+                    { text: "あまり興味がない", next: 'riasec_s1', score: { practitioner: 2 } },
+                    { text: "まだわからない", next: 'riasec_s1', score: { beginner: 3 } }
+                ]
+            },
+
+            // ===== RIASEC測定質問（計18問） =====
+
+            // S（社会的）測定 - 3問
+            riasec_s1: {
+                id: 'riasec_s1',
+                question: "クライアントの悩みを聞いて解決策を提案することに喜びを感じる",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_s2', riasec: { S: 3 }, weight: 1.5 },
+                    { text: "やや当てはまる", next: 'riasec_s2', riasec: { S: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_s2', riasec: { S: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_s2', riasec: { S: 0 } }
+                ]
+            },
+            riasec_s2: {
+                id: 'riasec_s2',
+                question: "人を助けたり、サポートすることに価値を感じる",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_s3', riasec: { S: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_s3', riasec: { S: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_s3', riasec: { S: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_s3', riasec: { S: 0 } }
+                ]
+            },
+            riasec_s3: {
+                id: 'riasec_s3',
+                question: "チームで協力して働くことが好きだ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_e1', riasec: { S: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_e1', riasec: { S: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_e1', riasec: { S: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_e1', riasec: { S: 0 } }
+                ]
+            },
+
+            // E（企業的）測定 - 3問
+            riasec_e1: {
+                id: 'riasec_e1',
+                question: "新しいクライアントを獲得する営業活動に興味がある",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_e2', riasec: { E: 3 }, weight: 1.3 },
+                    { text: "やや当てはまる", next: 'riasec_e2', riasec: { E: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_e2', riasec: { E: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_e2', riasec: { E: 0 } }
+                ]
+            },
+            riasec_e2: {
+                id: 'riasec_e2',
+                question: "リーダーシップを発揮して、人を動かすことが好きだ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_e3', riasec: { E: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_e3', riasec: { E: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_e3', riasec: { E: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_e3', riasec: { E: 0 } }
+                ]
+            },
+            riasec_e3: {
+                id: 'riasec_e3',
+                question: "大きな収益を上げることに強い動機づけを感じる",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_i1', riasec: { E: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_i1', riasec: { E: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_i1', riasec: { E: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_i1', riasec: { E: 0 } }
+                ]
+            },
+
+            // I（研究的）測定 - 3問
+            riasec_i1: {
+                id: 'riasec_i1',
+                question: "複雑な法律問題を分析・研究することが好きだ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_i2', riasec: { I: 3 }, weight: 1.3 },
+                    { text: "やや当てはまる", next: 'riasec_i2', riasec: { I: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_i2', riasec: { I: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_i2', riasec: { I: 0 } }
+                ]
+            },
+            riasec_i2: {
+                id: 'riasec_i2',
+                question: "データを分析して論理的な結論を導くことが得意だ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_i3', riasec: { I: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_i3', riasec: { I: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_i3', riasec: { I: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_i3', riasec: { I: 0 } }
+                ]
+            },
+            riasec_i3: {
+                id: 'riasec_i3',
+                question: "新しい知識を学び続けることに喜びを感じる",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_c1', riasec: { I: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_c1', riasec: { I: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_c1', riasec: { I: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_c1', riasec: { I: 0 } }
+                ]
+            },
+
+            // C（慣習的）測定 - 3問
+            riasec_c1: {
+                id: 'riasec_c1',
+                question: "ルールや手続きに従って正確に業務を進めることが得意だ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_c2', riasec: { C: 3 }, weight: 1.2 },
+                    { text: "やや当てはまる", next: 'riasec_c2', riasec: { C: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_c2', riasec: { C: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_c2', riasec: { C: 0 } }
+                ]
+            },
+            riasec_c2: {
+                id: 'riasec_c2',
+                question: "データを整理し、体系的に管理することが好きだ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_c3', riasec: { C: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_c3', riasec: { C: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_c3', riasec: { C: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_c3', riasec: { C: 0 } }
+                ]
+            },
+            riasec_c3: {
+                id: 'riasec_c3',
+                question: "細部まで注意を払い、ミスのない仕事をすることを重視する",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_r1', riasec: { C: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_r1', riasec: { C: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_r1', riasec: { C: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_r1', riasec: { C: 0 } }
+                ]
+            },
+
+            // R（現実的）測定 - 3問
+            riasec_r1: {
+                id: 'riasec_r1',
+                question: "実際に手を動かして具体的な成果物を作ることが好きだ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_r2', riasec: { R: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_r2', riasec: { R: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_r2', riasec: { R: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_r2', riasec: { R: 0 } }
+                ]
+            },
+            riasec_r2: {
+                id: 'riasec_r2',
+                question: "機械やツールを使って効率的に作業することに興味がある",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_r3', riasec: { R: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_r3', riasec: { R: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_r3', riasec: { R: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_r3', riasec: { R: 0 } }
+                ]
+            },
+            riasec_r3: {
+                id: 'riasec_r3',
+                question: "決められた手順で確実に成果を出すことを好む",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_a1', riasec: { R: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_a1', riasec: { R: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_a1', riasec: { R: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_a1', riasec: { R: 0 } }
+                ]
+            },
+
+            // A（芸術的）測定 - 3問
+            riasec_a1: {
+                id: 'riasec_a1',
+                question: "創造的・独創的なアプローチで問題解決することが好きだ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_a2', riasec: { A: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_a2', riasec: { A: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_a2', riasec: { A: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_a2', riasec: { A: 0 } }
+                ]
+            },
+            riasec_a2: {
+                id: 'riasec_a2',
+                question: "新しいアイデアや表現方法を考えることが好きだ",
+                options: [
+                    { text: "非常に当てはまる", next: 'riasec_a3', riasec: { A: 3 } },
+                    { text: "やや当てはまる", next: 'riasec_a3', riasec: { A: 2 } },
+                    { text: "あまり当てはまらない", next: 'riasec_a3', riasec: { A: 1 } },
+                    { text: "全く当てはまらない", next: 'riasec_a3', riasec: { A: 0 } }
+                ]
+            },
+            riasec_a3: {
+                id: 'riasec_a3',
+                question: "従来のやり方にとらわれず、柔軟に発想することが得意だ",
+                options: [
+                    { text: "非常に当てはまる", next: 'worklife_balance', riasec: { A: 3 } },
+                    { text: "やや当てはまる", next: 'worklife_balance', riasec: { A: 2 } },
+                    { text: "あまり当てはまらない", next: 'worklife_balance', riasec: { A: 1 } },
+                    { text: "全く当てはまらない", next: 'worklife_balance', riasec: { A: 0 } }
+                ]
+            },
+
+            // ワークライフバランス（Superの理論）
+            worklife_balance: {
+                id: 'worklife',
+                question: "人生において仕事とプライベートのバランスをどう考えますか？",
+                options: [
+                    { text: "仕事最優先で成果を出したい", next: 'end', score: { entrepreneur: 3, expert: 2 }, weight: 1.2 },
+                    { text: "仕事もプライベートもバランス重視", next: 'end', score: { practitioner: 3 } },
+                    { text: "プライベートを充実させたい", next: 'end', score: { practitioner: 2 } },
+                    { text: "まだ分からない", next: 'end', score: { beginner: 2 } }
+                ]
+            }
+        };
+
+        const resultTypes = {
+            beginner: {
+                icon: "🌱",
+                type: "成長志向タイプ",
+                catchPhrase: "コツコツ努力型の大器晩成タイプ！",
+                badge: "📚 ステディ・グロワー",
+                rarity: 35,
+                rarityLevel: "よくいる",
+                rarityColor: "#4CAF50",
+                description: "あなたは社労士としてのキャリアをこれから築いていく段階。仲間と共に学び、確実に成長していくことが大切です。",
+                traits: [
+                    "学習意欲が高い",
+                    "基礎をしっかり身につけたい",
+                    "コミュニティでの学びを重視",
+                    "合格後のキャリアイメージを描きたい"
+                ],
+                viralMessage: "堅実派のあなた。一歩ずつ確実に成長する姿勢が最強の武器✨",
+                theoreticalBasis: {
+                    schein: "専門・職能別能力 (TF) + 保障・安定 (SE)",
+                    holland: "S（社会的） + C（慣習的）",
+                    explanation: "Edgar Scheinのキャリア・アンカー理論によれば、あなたは専門性の基礎を築きながら、安定したキャリア構築を重視するタイプです。John HollandのRIASEC理論では、人を支援する社会的志向と、体系的な学習を好む慣習的志向の組み合わせが特徴的です。"
+                },
+                ctaTitle: "シャロスタで仲間と共に合格を目指そう",
+                ctaDescription: "社労士試験対策コミュニティ「シャロスタ」で、受験仲間と切磋琢磨しながら合格を目指しませんか？",
+                ctaButton: "シャロスタを見る",
+                ctaLink: "https://gakko.shikumisr.jp/studyingsr"
+            },
+            practitioner: {
+                icon: "💼",
+                type: "実務重視タイプ",
+                catchPhrase: "現場で信頼される実務のプロ！",
+                badge: "🛡️ リライアブル・マスター",
+                rarity: 40,
+                rarityLevel: "ふつう",
+                rarityColor: "#2196F3",
+                description: "あなたは実務経験を積み、安定したキャリアを築きたいタイプ。基礎実務を確実にマスターし、信頼される社労士を目指しましょう。",
+                traits: [
+                    "実務スキルの向上を重視",
+                    "安定したキャリアを志向",
+                    "手続き・給与計算に強くなりたい",
+                    "事務所就職や企業内社労士を検討"
+                ],
+                viralMessage: "安定志向のあなた。実務力で勝負する堅実派は、どんな時代でも強い🔥",
+                theoreticalBasis: {
+                    schein: "専門・職能別能力 (TF) + 保障・安定 (SE)",
+                    holland: "C（慣習的） + S（社会的）",
+                    explanation: "Scheinの理論では、特定分野の専門性を深めながら、組織内での安定を重視するタイプに分類されます。Hollandの理論では、規則的で体系的な業務を好み、人をサポートすることに喜びを感じる性質が顕著です。企業内社労士や事務所勤務に適性があります。"
+                },
+                ctaTitle: "社労士Labコミュニティで実務を学ぼう",
+                ctaDescription: "無料で参加できる社労士Labコミュニティで、実務の基礎から学び、就職・転職のサポートも受けられます。",
+                ctaButton: "社労士Labを見る",
+                ctaLink: "https://gakko.shikumisr.jp/srlab_community"
+            },
+            expert: {
+                icon: "⚖️",
+                type: "専門特化タイプ",
+                catchPhrase: "AI時代を生き抜くスペシャリスト！",
+                badge: "👑 エキスパート・エリート",
+                rarity: 15,
+                rarityLevel: "レア",
+                rarityColor: "#9C27B0",
+                description: "あなたは高度な専門性を追求するタイプ。法律相談や労務トラブル対応など、AI時代でも生き残る専門家を目指しましょう。",
+                traits: [
+                    "3号業務（労務相談）に興味",
+                    "法律的な専門性を追求",
+                    "特定社労士を視野に入れている",
+                    "AIに代替されない価値を提供したい"
+                ],
+                viralMessage: "知的好奇心の塊！あなたのような専門家こそ、これからの時代に必要とされる人材🎯",
+                theoreticalBasis: {
+                    schein: "専門・職能別能力 (TF) + 純粋な挑戦 (CH)",
+                    holland: "I（研究的） + S（社会的）",
+                    explanation: "Scheinの理論における「純粋な挑戦」志向が強く、困難な問題解決に知的興奮を覚えるタイプです。Hollandの理論では、分析的思考を駆使して複雑な労務問題を解決する研究的性質と、クライアントを支援する社会的性質の両立が特徴です。特定社労士や労務コンサルタントとして活躍できます。"
+                },
+                ctaTitle: "リーガルラボで専門性を極めよう",
+                ctaDescription: "高度な労務相談対応スキルを学べる「リーガルラボ」で、法律家としての社労士を目指しませんか？",
+                ctaButton: "リーガルラボを見る",
+                ctaLink: "https://gakko.shikumisr.jp/legal_lab"
+            },
+            entrepreneur: {
+                icon: "🚀",
+                type: "独立志向タイプ",
+                catchPhrase: "次世代を創る起業家マインドの持ち主！",
+                badge: "💎 ビジョナリー・リーダー",
+                rarity: 10,
+                rarityLevel: "激レア",
+                rarityColor: "#FF6B6B",
+                description: "あなたは独立開業を視野に入れた野心家タイプ。顧客獲得、経営スキル、ブランディングなど、独立に必要な力を身につけましょう。",
+                traits: [
+                    "独立開業を目指している",
+                    "大きく稼ぎたい野心がある",
+                    "営業・マーケティングに興味",
+                    "自分のブランドを確立したい"
+                ],
+                viralMessage: "野心と行動力を兼ね備えた稀少人材！あなたは全体のわずか10%💫",
+                theoreticalBasis: {
+                    schein: "起業家的創造性 (EC) + 自律・独立 (AU)",
+                    holland: "E（企業的） + S（社会的）",
+                    explanation: "Scheinの理論では、自ら事業を創造し、自律的に働くことに最大の価値を置くタイプです。Hollandの理論における企業的性質（リーダーシップ、営業力、経営センス）と社会的性質（クライアント支援）の組み合わせは、独立開業社労士に最適な特性です。"
+                },
+                ctaTitle: "社労士Labで独立準備を始めよう",
+                ctaDescription: "独立開業を目指す仲間とのネットワーク構築、案件紹介、キャリア相談など、独立準備をサポートします。",
+                ctaButton: "社労士Labを見る",
+                ctaLink: "https://gakko.shikumisr.jp/srlab_community"
+            }
+        };
+
+        let currentQuestionKey = 'start';
+        let questionCount = 0;
+        let totalQuestions = 24; // 固定：どのパスでも24問
+        let scores = { beginner: 0, practitioner: 0, expert: 0, entrepreneur: 0 };
+        let riasecScores = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+        let userPath = [];
+        let userAnswers = {}; // 各質問の回答内容を記録
+        let experienceLevel = ''; // 信頼度計算用
+        let userNickname = ''; // ニックネーム
+        let userProfileImage = ''; // Xアカウントのプロフィール画像URL
+        let twitterUsername = ''; // Xアカウント名
+        let isProcessing = false; // 処理中フラグ（重複クリック防止）
+
+        // バックエンドAPIのベースURL（環境に応じて変更）
+        const API_BASE_URL = 'http://localhost:3000'; // ローカル開発用
+        // 本番環境では以下のように設定:
+        // const API_BASE_URL = 'https://your-backend.render.com';
+
+        // Google Apps Script Web AppのURL（スプレッドシート連携用）
+        // セットアップ後、ここにデプロイURLを貼り付けてください
+        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyEvWkpHO08uvlhUFOlYMRGnHUY9ytJteuTn2ACO8MnwuSdSMSrKHLnM2uH3imyYfFiJA/exec';
+        // 例: 'https://script.google.com/macros/s/AKfycby.../exec'
+
+        // Xアカウント情報を取得する関数
+        async function fetchTwitterUser() {
+            const input = document.getElementById('twitterUsernameInput');
+            const username = input.value.trim();
+
+            const errorEl = document.getElementById('twitterUserError');
+            const previewEl = document.getElementById('twitterUserPreview');
+            const avatarEl = document.getElementById('twitterUserAvatar');
+            const nameEl = document.getElementById('twitterUserName');
+
+            // エラーメッセージをクリア
+            errorEl.style.display = 'none';
+            errorEl.textContent = '';
+            previewEl.style.display = 'none';
+
+            if (!username) {
+                errorEl.textContent = 'アカウント名を入力してください';
+                errorEl.style.display = 'block';
+                return;
+            }
+
+            try {
+                // ローディング表示
+                input.style.borderColor = '#0066FF';
+                input.disabled = true;
+
+                // バックエンドAPIを呼び出し
+                const response = await fetch(`${API_BASE_URL}/api/twitter-user/${encodeURIComponent(username)}`);
+                const data = await response.json();
+
+                if (data.success && data.user) {
+                    // 成功：ユーザー情報を保存
+                    userNickname = data.user.name;
+                    userProfileImage = data.user.profileImageUrl;
+                    twitterUsername = data.user.username;
+
+                    // プレビューを表示
+                    avatarEl.src = userProfileImage;
+                    nameEl.textContent = `${userNickname} (@${twitterUsername})`;
+                    previewEl.style.display = 'block';
+
+                    // 入力欄を緑色に
+                    input.style.borderColor = '#00C896';
+                } else {
+                    // エラー
+                    errorEl.textContent = data.message || 'アカウント情報を取得できませんでした';
+                    errorEl.style.display = 'block';
+                    input.style.borderColor = '#FF6B6B';
+                }
+            } catch (error) {
+                console.error('Error fetching Twitter user:', error);
+                errorEl.textContent = 'サーバーに接続できませんでした。バックエンドサーバーが起動しているか確認してください。';
+                errorEl.style.display = 'block';
+                input.style.borderColor = '#FF6B6B';
+            } finally {
+                input.disabled = false;
+            }
+        }
+
+        function startQuiz() {
+            // X情報が取得されていない場合は、入力値をそのままニックネームとして使用
+            if (!userNickname) {
+                const input = document.getElementById('twitterUsernameInput').value.trim();
+                if (input) {
+                    userNickname = input.replace('@', ''); // @を取り除いて使用
+                }
+            }
+
+            // カウンターをリセット
+            questionCount = 0;
+            totalQuestions = 24; // 必ず24問
+            scores = { beginner: 0, practitioner: 0, expert: 0, entrepreneur: 0 };
+            riasecScores = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+            userPath = [];
+            userAnswers = {};
+
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            document.getElementById('totalQuestions').textContent = '24';
+            document.getElementById('currentQuestion').textContent = '0';
+            document.getElementById('progressFill').style.width = '0%';
+            showQuestion('start');
+        }
+
+        function showQuestion(questionKey) {
+            if (questionKey === 'end') {
+                showResult();
+                return;
+            }
+
+            questionCount++;
+            currentQuestionKey = questionKey;
+            userPath.push(questionKey);
+
+            const questionData = questionFlow[questionKey];
+            const container = document.getElementById('questionContainer');
+            container.innerHTML = '';
+
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question-screen active';
+
+            questionDiv.innerHTML = `
+                <div class="question-title">${questionData.question}</div>
+                <div class="options">
+                    ${questionData.options.map((option, i) => `
+                        <div class="option" onclick="selectOption('${questionKey}', ${i})">
+                            ${option.text}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            container.appendChild(questionDiv);
+            updateProgress();
+        }
+
+        function selectOption(questionKey, optionIndex) {
+            // 処理中なら無視（重複クリック防止）
+            if (isProcessing) {
+                return;
+            }
+            isProcessing = true;
+
+            const questionData = questionFlow[questionKey];
+            const option = questionData.options[optionIndex];
+
+            // 回答を記録
+            userAnswers[questionKey] = {
+                question: questionData.question,
+                answer: option.text,
+                questionNumber: questionCount
+            };
+
+            // 重み付けの取得（デフォルト1.0）
+            const weight = option.weight || 1.0;
+
+            // キャリアタイプスコアを加算（重み付け適用）
+            if (option.score) {
+                Object.keys(option.score).forEach(type => {
+                    scores[type] += option.score[type] * weight;
+                });
+            }
+
+            // RIASECスコアを加算（重み付け適用）
+            if (option.riasec) {
+                Object.keys(option.riasec).forEach(dimension => {
+                    riasecScores[dimension] += option.riasec[dimension] * weight;
+                });
+            }
+
+            // 経験レベルの記録（最初の質問で）
+            if (questionKey === 'start') {
+                experienceLevel = option.text;
+            }
+
+            // Visual feedback
+            const options = document.querySelectorAll('.option');
+            options[optionIndex].classList.add('selected');
+
+            setTimeout(() => {
+                isProcessing = false; // 次の質問に移る前にフラグをリセット
+                showQuestion(option.next);
+            }, 300);
+        }
+
+        function updateProgress() {
+            const progress = (questionCount / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('currentQuestion').textContent = questionCount;
+            document.getElementById('totalQuestions').textContent = '24';
+        }
+
+        function showResult() {
+            // Find highest score
+            let maxScore = 0;
+            let resultType = 'beginner';
+
+            Object.keys(scores).forEach(type => {
+                if (scores[type] > maxScore) {
+                    maxScore = scores[type];
+                    resultType = type;
+                }
+            });
+
+            let result = resultTypes[resultType];
+
+            // 受験生・合格者（未就職）の場合は、シャロスタ一択に上書き
+            if (experienceLevel === 'まだ資格を持っていない（受験生）' ||
+                experienceLevel === '資格取得したばかり（実務未経験）') {
+                result = {
+                    ...result,
+                    ctaTitle: "シャロスタで仲間と共に合格を目指そう",
+                    ctaDescription: "社労士試験対策コミュニティ「シャロスタ」で、受験仲間と切磋琢磨しながら合格を目指しませんか？",
+                    ctaButton: "シャロスタを見る",
+                    ctaLink: "https://gakko.shikumisr.jp/studyingsr"
+                };
+            }
+
+            // === RIASEC 3-letter code calculation ===
+            const riasecArray = Object.entries(riasecScores)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 3);
+            const riasecCode = riasecArray.map(entry => entry[0]).join('-');
+            const riasecDetails = riasecArray.map(entry => `${entry[0]}(${entry[1]}点)`).join('　');
+
+            // === 診断信頼度の計算 ===
+            let confidence = 0;
+            if (experienceLevel.includes('3年以上')) {
+                confidence = 90;
+            } else if (experienceLevel.includes('1-3年')) {
+                confidence = 80;
+            } else if (experienceLevel.includes('取得したばかり')) {
+                confidence = 70;
+            } else {
+                confidence = 60;
+            }
+
+            // スコアの分散度を考慮（上位スコアと2位スコアの差が大きいほど信頼度が高い）
+            const sortedScores = Object.values(scores).sort((a, b) => b - a);
+            if (sortedScores[0] - sortedScores[1] > 10) {
+                confidence += 5;
+            }
+
+            // Hide question container and progress
+            document.getElementById('questionContainer').innerHTML = '';
+            document.getElementById('progressContainer').classList.add('hidden');
+
+            // Show result
+            document.getElementById('resultIcon').textContent = result.icon;
+            document.getElementById('resultType').textContent = result.type;
+            document.getElementById('resultDescription').textContent = result.description;
+
+            // Xアカウント情報表示
+            const nicknameDisplayEl = document.getElementById('nicknameDisplay');
+            if (userNickname || userProfileImage) {
+                let displayHTML = '';
+
+                if (userProfileImage) {
+                    displayHTML += `<img src="${userProfileImage}" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--primary); vertical-align: middle; margin-right: 8px;">`;
+                }
+
+                if (userNickname) {
+                    displayHTML += `<span>${userNickname}さんは</span>`;
+                    if (twitterUsername) {
+                        displayHTML += `<span style="font-size: 13px; color: #888; margin-left: 4px;">(@${twitterUsername})</span>`;
+                    }
+                }
+
+                nicknameDisplayEl.innerHTML = displayHTML;
+                nicknameDisplayEl.style.display = 'block';
+            } else {
+                nicknameDisplayEl.style.display = 'none';
+            }
+
+            // レア度表示
+            const rarityBadge = document.getElementById('rarityBadge');
+            if (result.rarityLevel === '激レア') {
+                rarityBadge.innerHTML = '⭐ 激レア ⭐';
+                rarityBadge.style.background = 'linear-gradient(135deg, #FF6B6B, #FF8E53)';
+            } else if (result.rarityLevel === 'レア') {
+                rarityBadge.innerHTML = '✨ レア ✨';
+                rarityBadge.style.background = 'linear-gradient(135deg, #9C27B0, #E91E63)';
+            } else if (result.rarityLevel === 'ふつう') {
+                rarityBadge.innerHTML = '🔹 ふつう 🔹';
+                rarityBadge.style.background = 'linear-gradient(135deg, #2196F3, #00BCD4)';
+                rarityBadge.style.animation = 'none'; // pulseなし
+            } else {
+                rarityBadge.innerHTML = '🌿 よくいる 🌿';
+                rarityBadge.style.background = 'linear-gradient(135deg, #4CAF50, #8BC34A)';
+                rarityBadge.style.animation = 'none'; // pulseなし
+            }
+
+            document.getElementById('rarityPercent').textContent = result.rarity + '%';
+            document.getElementById('rarityPercent').style.color = result.rarityColor;
+
+            // 称号・バッジ
+            document.getElementById('badgeDisplay').textContent = result.badge;
+            document.getElementById('badgeDisplay').style.color = result.rarityColor;
+
+            // キャッチフレーズ
+            document.getElementById('catchPhrase').textContent = result.catchPhrase;
+            document.getElementById('catchPhrase').style.borderColor = result.rarityColor;
+            document.getElementById('catchPhrase').style.color = result.rarityColor;
+
+            // バイラルメッセージ
+            document.getElementById('viralMessage').textContent = result.viralMessage;
+
+            const traitsList = document.getElementById('resultTraits');
+            traitsList.innerHTML = result.traits.map(trait => `<li>${trait}</li>`).join('');
+
+            // Show RIASEC code and confidence
+            document.getElementById('riasecCode').textContent = riasecCode;
+            document.getElementById('riasecDetails').textContent = riasecDetails;
+            document.getElementById('confidenceLevel').textContent = confidence + '%';
+            document.getElementById('confidenceBar').style.width = confidence + '%';
+
+            // === RIASEC六角形チャートの描画 ===
+            drawRiasecHexagon(riasecScores);
+
+            // === RIASEC詳細スコアの表示 ===
+            displayRiasecBreakdown(riasecScores);
+
+            // Confidence level color
+            const confidenceBar = document.getElementById('confidenceBar');
+            if (confidence >= 85) {
+                confidenceBar.style.background = '#00C896';
+            } else if (confidence >= 70) {
+                confidenceBar.style.background = '#0066FF';
+            } else {
+                confidenceBar.style.background = '#FF6B6B';
+            }
+
+            // Show theoretical basis
+            document.getElementById('scheinAnchor').textContent = result.theoreticalBasis.schein;
+            document.getElementById('hollandCode').textContent = result.theoreticalBasis.holland;
+            document.getElementById('theoreticalExplanation').textContent = result.theoreticalBasis.explanation;
+
+            document.getElementById('ctaTitle').textContent = result.ctaTitle;
+            document.getElementById('ctaDescription').textContent = result.ctaDescription;
+            document.getElementById('ctaButton').textContent = result.ctaButton;
+            document.getElementById('ctaButton').href = result.ctaLink;
+
+            document.getElementById('resultScreen').classList.add('active');
+
+            window.currentResult = result;
+            window.currentRiasecCode = riasecCode;
+            window.currentConfidence = confidence;
+            window.currentRiasecScores = riasecScores;
+            window.currentNickname = userNickname || 'ゲスト';
+            window.currentProfileImageUrl = userProfileImage || '';
+            window.currentTwitterUsername = twitterUsername || '';
+
+            // === 平均値との比較を表示 ===
+            loadAndDisplayAverageComparison(riasecScores);
+
+            // === Googleスプレッドシートにデータ送信 ===
+            saveToGoogleSheets(result, riasecCode, riasecScores, confidence);
+        }
+
+        // 平均値を取得して比較表示する関数
+        async function loadAndDisplayAverageComparison(myScores) {
+            if (!GOOGLE_SHEETS_URL) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`${GOOGLE_SHEETS_URL}?action=stats`);
+                const data = await response.json();
+
+                if (data.success && data.totalCount > 0) {
+                    displayAverageComparison(myScores, data.averageRiasec, data.totalCount);
+                }
+            } catch (error) {
+                console.error('統計情報の取得エラー:', error);
+            }
+        }
+
+        // 平均値との比較を表示する関数
+        function displayAverageComparison(myScores, avgScores, totalCount) {
+            // RIASECチャートに平均値の線を追加
+            const canvas = document.getElementById('riasecChart');
+            if (!canvas) {
+                console.log('riasecChart要素が見つかりません（平均比較機能は無効）');
+                return;
+            }
+            const ctx = canvas.getContext('2d');
+
+            // 平均値の六角形を描画（点線、グレー）
+            ctx.strokeStyle = '#999';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]); // 点線
+
+            const centerX = 140;
+            const centerY = 140;
+            const maxRadius = 120;
+            const dimensions = ['R', 'I', 'A', 'S', 'E', 'C'];
+
+            ctx.beginPath();
+            dimensions.forEach((dim, i) => {
+                const angle = (Math.PI * 2 / 6) * i - Math.PI / 2;
+                const avgValue = avgScores[dim] || 0;
+                const radius = (avgValue / 15) * maxRadius; // 15が最大値
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            });
+            ctx.closePath();
+            ctx.stroke();
+            ctx.setLineDash([]); // 点線解除
+
+            // 平均値との比較情報を表示
+            const comparisonHTML = `
+                <div style="background: linear-gradient(135deg, #f5f7fa, #c3cfe2); padding: 20px; border-radius: 12px; margin-top: 24px;">
+                    <div style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 12px; text-align: center;">
+                        📊 これまでの回答者との比較（${totalCount}人）
+                    </div>
+                    <div style="font-size: 13px; color: #666; text-align: center; margin-bottom: 16px;">
+                        グラフの<span style="color: var(--primary); font-weight: 600;">青い線</span>があなた、<span style="color: #999; font-weight: 600;">灰色の点線</span>が平均値です
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; font-size: 13px;">
+                        ${dimensions.map(dim => {
+                            const myValue = myScores[dim] || 0;
+                            const avgValue = avgScores[dim] || 0;
+                            const diff = myValue - avgValue;
+                            const diffText = diff > 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
+                            const diffColor = diff > 0 ? '#00C896' : (diff < 0 ? '#FF6B6B' : '#999');
+                            const dimNames = {
+                                R: '現実的', I: '研究的', A: '芸術的',
+                                S: '社会的', E: '企業的', C: '慣習的'
+                            };
+                            return `
+                                <div style="background: white; padding: 12px; border-radius: 8px; text-align: center;">
+                                    <div style="font-weight: 600; color: #333; margin-bottom: 4px;">${dim} (${dimNames[dim]})</div>
+                                    <div style="font-size: 16px; font-weight: 700; color: var(--primary);">あなた: ${myValue}</div>
+                                    <div style="font-size: 12px; color: #666;">平均: ${avgValue.toFixed(1)}</div>
+                                    <div style="font-size: 14px; font-weight: 700; color: ${diffColor}; margin-top: 4px;">${diffText}</div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+
+            // RIASECグラフの後に挿入
+            const riasecSection = document.querySelector('#riasecChart').parentElement;
+            const comparisonDiv = document.createElement('div');
+            comparisonDiv.innerHTML = comparisonHTML;
+            riasecSection.after(comparisonDiv);
+        }
+
+        // Googleスプレッドシートにデータを送信する関数
+        async function saveToGoogleSheets(result, riasecCode, riasecScores, confidence) {
+            // Google Sheets URLが設定されていない場合はスキップ
+            if (!GOOGLE_SHEETS_URL) {
+                console.log('Google Sheets URL is not configured. Skipping data save.');
+                return;
+            }
+
+            try {
+                const data = {
+                    timestamp: new Date().toISOString(),
+                    nickname: userNickname || '',
+                    twitterUsername: twitterUsername || '',
+                    profileImageUrl: userProfileImage || '',
+                    experienceLevel: experienceLevel || '',
+                    resultType: result.type || '',
+                    riasecCode: riasecCode || '',
+                    riasecScores: riasecScores,
+                    confidence: confidence || 0,
+                    rarity: result.rarity || 0,
+                    rarityLevel: result.rarityLevel || '',
+                    careerAnchor: result.theoreticalBasis?.careerAnchors || '',
+                    badge: result.badge || '',
+                    userPath: userPath,
+                    userAnswers: userAnswers, // 全ての回答を送信
+                    userAgent: navigator.userAgent,
+                    referrer: document.referrer
+                };
+
+                // デバッグ: 送信データを確認
+                console.log('送信データ:', data);
+                console.log('回答数:', Object.keys(userAnswers).length);
+
+                const response = await fetch(GOOGLE_SHEETS_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Google Apps Scriptの制約により必要
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                // no-corsモードでは response.ok が使えないため、エラーハンドリングは限定的
+                console.log('診断データをGoogleスプレッドシートに送信しました');
+
+            } catch (error) {
+                console.error('Googleスプレッドシートへの送信エラー:', error);
+                // エラーが発生してもユーザー体験を損なわないよう、サイレントに処理
+            }
+        }
+
+        function drawRiasecHexagon(scores) {
+            // 六角形の各頂点の座標を計算
+            const centerX = 140;
+            const centerY = 130;
+            const maxRadius = 90; // 中心から最外周までの距離
+
+            // 最大スコアを計算（正規化用）
+            const maxScore = Math.max(...Object.values(scores), 1);
+
+            // RIASEC各次元の角度（度）- Rを上（-90度）から時計回り
+            const angles = {
+                R: -90,    // 上
+                I: -30,    // 右上
+                A: 30,     // 右下
+                S: 90,     // 下
+                E: 150,    // 左下
+                C: 210     // 左上
+            };
+
+            // 各次元のスコアに基づいた座標を計算
+            const points = Object.keys(angles).map(dimension => {
+                const score = scores[dimension] || 0;
+                const normalizedScore = score / maxScore; // 0-1に正規化
+                const radius = maxRadius * normalizedScore;
+                const angle = angles[dimension] * (Math.PI / 180); // ラジアンに変換
+
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+
+                return `${x},${y}`;
+            });
+
+            // SVGポリゴンを更新
+            document.getElementById('riasecDataPolygon').setAttribute('points', points.join(' '));
+        }
+
+        function displayRiasecBreakdown(scores) {
+            const dimensions = {
+                R: { name: '現実的（R）', description: '手を動かして具体的な成果を出す', emoji: '🔧' },
+                I: { name: '研究的（I）', description: '分析・研究・論理的思考', emoji: '🔬' },
+                A: { name: '芸術的（A）', description: '創造的・独創的アプローチ', emoji: '🎨' },
+                S: { name: '社会的（S）', description: '人を助ける・サポート', emoji: '🤝' },
+                E: { name: '企業的（E）', description: '営業・リーダーシップ', emoji: '📈' },
+                C: { name: '慣習的（C）', description: '正確・体系的な業務', emoji: '📋' }
+            };
+
+            // スコアを降順にソート
+            const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+
+            const breakdownHTML = sortedScores.map(([dim, score], index) => {
+                const info = dimensions[dim];
+                const isTop3 = index < 3;
+                const bgColor = isTop3 ? 'linear-gradient(135deg, #e3f2fd, #fff3e0)' : '#f9f9f9';
+                const borderColor = isTop3 ? '#2196F3' : '#e0e0e0';
+                const fontWeight = isTop3 ? '700' : '600';
+
+                return `
+                    <div style="background: ${bgColor}; padding: 10px; border-radius: 8px; border: 2px solid ${borderColor};">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <span style="font-weight: ${fontWeight}; color: #333;">${info.emoji} ${info.name}</span>
+                            <span style="font-size: 18px; font-weight: 800; color: #0066FF;">${score.toFixed(1)}</span>
+                        </div>
+                        <div style="font-size: 11px; color: #666;">${info.description}</div>
+                        ${isTop3 ? '<div style="font-size: 10px; color: #2196F3; margin-top: 4px; font-weight: 700;">★ TOP3</div>' : ''}
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('riasecBreakdown').innerHTML = breakdownHTML;
+        }
+
+        // 結果画像を生成する共通関数（Canvasを返す）- クリーンなデザイン
+        async function generateResultImage() {
+            const result = window.currentResult;
+            const riasecCode = window.currentRiasecCode || '';
+            const riasecScores = window.currentRiasecScores;
+            const nickname = window.currentNickname || 'ゲスト';
+            const profileImageUrl = window.currentProfileImageUrl;
+            const twitterUser = window.currentTwitterUsername || '';
+
+            // Canvasを作成（縦長、余白多め）
+            const canvas = document.createElement('canvas');
+            canvas.width = 1080;
+            canvas.height = 1920;
+            const ctx = canvas.getContext('2d');
+
+            // 背景: 純白
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, 1080, 1920);
+
+            let currentY = 120;
+
+            // === プロフィール画像（大きく、中央） ===
+            if (profileImageUrl) {
+                try {
+                    const img = await loadImage(profileImageUrl);
+                    const size = 160;
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(540, currentY + size/2, size/2, 0, Math.PI * 2);
+                    ctx.closePath();
+                    ctx.clip();
+                    ctx.drawImage(img, 540 - size/2, currentY, size, size);
+                    ctx.restore();
+
+                    // 円の枠線（極薄）
+                    ctx.strokeStyle = '#E0E0E0';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.arc(540, currentY + size/2, size/2, 0, Math.PI * 2);
+                    ctx.stroke();
+
+                    currentY += size + 40;
+                } catch (err) {
+                    console.log('プロフィール画像の読み込みに失敗');
+                    currentY += 40;
+                }
+            } else {
+                // プロフィール画像がない場合はアイコン絵文字を大きく表示
+                ctx.font = '140px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(result.icon, 540, currentY + 70);
+                currentY += 180;
+            }
+
+            // ニックネーム（大きく、太字）
+            ctx.font = '700 56px system-ui, -apple-system, sans-serif';
+            ctx.fillStyle = '#1A1A1A';
+            ctx.textAlign = 'center';
+            ctx.fillText(nickname, 540, currentY);
+            currentY += 70;
+
+            // Xユーザー名（控えめ）
+            if (twitterUser) {
+                ctx.font = '400 32px system-ui, -apple-system, sans-serif';
+                ctx.fillStyle = '#999999';
+                ctx.fillText(`@${twitterUser}`, 540, currentY);
+                currentY += 60;
+            } else {
+                currentY += 20;
+            }
+
+            // セパレーター（シンプルな線）
+            ctx.strokeStyle = '#E0E0E0';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(340, currentY);
+            ctx.lineTo(740, currentY);
+            ctx.stroke();
+            currentY += 80;
+
+            // === 診断タイプ（大きく） ===
+            ctx.font = '700 64px system-ui, -apple-system, sans-serif';
+            ctx.fillStyle = '#1A1A1A';
+            ctx.textAlign = 'center';
+            ctx.fillText(result.type, 540, currentY);
+            currentY += 90;
+
+            // レア度（アクセントカラー）
+            ctx.font = '600 40px system-ui, -apple-system, sans-serif';
+            ctx.fillStyle = result.rarityColor || '#0066FF';
+            ctx.fillText(`${result.rarityLevel} ${result.rarity}%`, 540, currentY);
+            currentY += 80;
+
+            // バッジ（控えめ）
+            ctx.font = '500 36px system-ui, -apple-system, sans-serif';
+            ctx.fillStyle = '#666666';
+            ctx.fillText(result.badge, 540, currentY);
+            currentY += 100;
+
+            // セパレーター
+            ctx.strokeStyle = '#E0E0E0';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(340, currentY);
+            ctx.lineTo(740, currentY);
+            ctx.stroke();
+            currentY += 80;
+
+            // === RIASECコード（強調） ===
+            ctx.font = '400 32px system-ui, -apple-system, sans-serif';
+            ctx.fillStyle = '#999999';
+            ctx.fillText('RIASEC CODE', 540, currentY);
+            currentY += 50;
+
+            ctx.font = '700 72px "Courier New", monospace';
+            ctx.fillStyle = '#1A1A1A';
+            ctx.fillText(riasecCode, 540, currentY);
+            currentY += 100;
+
+            // === RIASEC六角形グラフ ===
+            const dimensions = ['R', 'I', 'A', 'S', 'E', 'C'];
+            const dimNames = {
+                R: '現実的', I: '研究的', A: '芸術的',
+                S: '社会的', E: '企業的', C: '慣習的'
+            };
+
+            const centerX = 540;
+            const centerY = currentY + 240;
+            const maxRadius = 200;
+
+            // 背景の六角形グリッド（3段階）
+            ctx.strokeStyle = '#F0F0F0';
+            ctx.lineWidth = 1;
+            for (let level = 1; level <= 3; level++) {
+                ctx.beginPath();
+                dimensions.forEach((dim, i) => {
+                    const angle = (Math.PI * 2 / 6) * i - Math.PI / 2;
+                    const radius = (level / 3) * maxRadius;
+                    const x = centerX + radius * Math.cos(angle);
+                    const y = centerY + radius * Math.sin(angle);
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                });
+                ctx.closePath();
+                ctx.stroke();
+            }
+
+            // 軸線（中心から各頂点へ）
+            ctx.strokeStyle = '#F0F0F0';
+            ctx.lineWidth = 1;
+            dimensions.forEach((dim, i) => {
+                const angle = (Math.PI * 2 / 6) * i - Math.PI / 2;
+                const x = centerX + maxRadius * Math.cos(angle);
+                const y = centerY + maxRadius * Math.sin(angle);
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            });
+
+            // ユーザーのスコアを六角形で描画
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.strokeStyle = '#1A1A1A';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            dimensions.forEach((dim, i) => {
+                const angle = (Math.PI * 2 / 6) * i - Math.PI / 2;
+                const score = riasecScores[dim] || 0;
+                const radius = (score / 15) * maxRadius;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            // 各次元のラベル
+            ctx.font = '600 28px system-ui, -apple-system, sans-serif';
+            ctx.fillStyle = '#1A1A1A';
+            ctx.textAlign = 'center';
+            dimensions.forEach((dim, i) => {
+                const angle = (Math.PI * 2 / 6) * i - Math.PI / 2;
+                const labelRadius = maxRadius + 70;
+                const x = centerX + labelRadius * Math.cos(angle);
+                const y = centerY + labelRadius * Math.sin(angle);
+
+                const score = riasecScores[dim] || 0;
+                ctx.fillText(`${dim}`, x, y);
+                ctx.font = '400 22px system-ui, -apple-system, sans-serif';
+                ctx.fillStyle = '#999999';
+                ctx.fillText(`${dimNames[dim]}`, x, y + 28);
+                ctx.font = '700 32px system-ui, -apple-system, sans-serif';
+                ctx.fillStyle = '#1A1A1A';
+                ctx.fillText(`${score.toFixed(1)}`, x, y + 60);
+                ctx.font = '600 28px system-ui, -apple-system, sans-serif';
+            });
+
+            currentY += 540;
+
+            // === フッター ===
+            ctx.font = '500 28px system-ui, -apple-system, sans-serif';
+            ctx.fillStyle = '#CCCCCC';
+            ctx.textAlign = 'center';
+            ctx.fillText('社労士Lab キャリア診断', 540, 1820);
+
+            return canvas;
+        }
+
+        // 画像を読み込むヘルパー関数
+        function loadImage(url) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = 'anonymous'; // CORSエラー回避
+                img.onload = () => resolve(img);
+                img.onerror = reject;
+                img.src = url;
+            });
+        }
+
+        // 画像をクリップボードにコピーする関数
+        async function copyImageToClipboard(canvas) {
+            try {
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                await navigator.clipboard.write([
+                    new ClipboardItem({ 'image/png': blob })
+                ]);
+                return true;
+            } catch (err) {
+                console.error('クリップボードへのコピーに失敗:', err);
+                return false;
+            }
+        }
+
+        // 結果画像をダウンロードする関数
+        async function downloadResultImage() {
+            const result = window.currentResult;
+            const canvas = await generateResultImage();
+
+            // 画像をダウンロード
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `社労士キャリア診断_${result.type}.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        // Xシェア時に画像を自動コピー
+        async function shareTwitter() {
+            const result = window.currentResult;
+            const riasecCode = window.currentRiasecCode || '';
+            const rarityEmoji = result.rarityLevel === '激レア' ? '⭐' : result.rarityLevel === 'レア' ? '✨' : '🔹';
+
+            // 画像を生成してクリップボードにコピー
+            const canvas = await generateResultImage();
+            const copied = await copyImageToClipboard(canvas);
+
+            // 診断ツールのURL
+            const baseUrl = window.location.origin + window.location.pathname;
+
+            // 短縮したテキスト（280文字以内）
+            const text = `【${rarityEmoji} ${result.rarityLevel}】私の社労士キャリアは「${result.type}」！
+${result.badge}
+
+全体の${result.rarity}%のタイプ
+RIASECコード: ${riasecCode}
+
+あなたも診断してみよう👇
+#社労士キャリア診断 #社労士`;
+
+            // 通知を表示
+            if (copied) {
+                alert('📋 結果画像をコピーしました！\n\nX投稿画面で Ctrl+V（Mac: Cmd+V）で貼り付けてください。');
+            }
+
+            // Twitter投稿画面を開く
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(baseUrl)}`, '_blank');
+        }
+
+        function shareLine() {
+            const result = window.currentResult;
+            const baseUrl = window.location.origin + window.location.pathname;
+
+            const text = `私の社労士キャリアタイプは「${result.type}」でした！${result.badge}\n\nあなたも診断してみて！`;
+            window.open(`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(baseUrl)}&text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
